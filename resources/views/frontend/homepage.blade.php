@@ -20,7 +20,7 @@
             <div class="row mas-m">
                 <div class="col-sm-6 mas-p">
                     <div class="mas-item mas-big">
-                        <a href="javascript:void(0)"><figure><img src="{{ asset('/bower_components/osru-template-assets/assets/images/masonry/518x450-02.jpg') }}" class="img-responsive" alt=""></figure></a>
+                        <a href="javascript:void(0)"><figure><img src="{{ asset(config('images_path.masonry_2')) }}" class="img-responsive" alt=""></figure></a>
                         <div class="mas-text">
                             <div class="post-cat"><a href="javascript:void(0)">Fashion</a></div>
                             <h2 class="mas-title"><a href="javascript:void(0)">It is a long <em>established</em> fact that a reader will be distracted by the readable content</a></h2>
@@ -35,7 +35,7 @@
                     <div class="row mas-m hidden-xs">
                         <div class="col-xs-12 col-sm-12 mas-p">
                             <div class="mas-item masonry-sm mas-m-b">
-                                <a href="javascript:void(0)"><figure><img src="{{ asset('/bower_components/osru-template-assets/assets/images/masonry/518x223-1.jpg') }}" class="img-responsive" alt=""></figure></a>
+                                <a href="javascript:void(0)"><figure><img src="{{ asset(config('images_path.masonry_1')) }}" class="img-responsive" alt=""></figure></a>
                                 <div class="mas-text">
                                     <div class="post-cat"><a href="javascript:void(0)">Fashion</a></div>
                                     <h4 class="mas-title"><a href="javascript:void(0)">It is a long <em>established</em> fact that a reader</a></h4>
@@ -50,9 +50,10 @@
                     <div class="row mas-m">
                         <div class="col-xs-6 col-sm-6 mas-p">
                             <div class="masonry-slide1 owl-carousel owl-theme">
+                                @for($i = 9; $i < 11; $i++)
                                 <div class="item">
                                     <div class="mas-item masonry-sm">
-                                        <a href="javascript:void(0)"><figure><img src="{{ asset('/bower_components/osru-template-assets/assets/images/masonry/257x223-09.jpg') }}" class="img-responsive" alt=""></figure></a>
+                                        <a href="javascript:void(0)"><figure><img src="{{ asset(config("images_path.masonry_$i")) }}" class="img-responsive" alt=""></figure></a>
                                         <div class="mas-text">
                                             <div class="post-cat"><a href="javascript:void(0)">Fashion</a></div>
                                             <h4 class="mas-title"><a href="javascript:void(0)">It is a long <em>established</em> fact that a reader</a></h4>
@@ -63,26 +64,15 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="item">
-                                    <div class="mas-item masonry-sm">
-                                        <a href="javascript:void(0)"><figure><img src="{{ asset('/bower_components/osru-template-assets/assets/images/masonry/257x223-10.jpg') }}" class="img-responsive" alt=""></figure></a>
-                                        <div class="mas-text">
-                                            <div class="post-cat"><a href="javascript:void(0)">Fashion</a></div>
-                                            <h4 class="mas-title"><a href="javascript:void(0)">It is a long <em>established</em> fact that a reader</a></h4>
-                                            <div class="mas-details">
-                                                <p>There are many variations of passages of Lorem Ipsum available</p>
-                                                <a href="javascript:void(0)" class="read-more">{{ trans('app.read_more') }} &#8702;</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                @endfor
                             </div>
                         </div>
                         <div class="col-xs-6 col-sm-6 mas-p">
                             <div class="masonry-slide2 owl-carousel owl-theme">
+                                @for($i = 11; $i < 13; $i++)
                                 <div class="item">
                                     <div class="mas-item masonry-sm">
-                                        <a href="javascript:void(0)"><figure><img src="{{ asset('/bower_components/osru-template-assets/assets/images/masonry/257x223-11.jpg') }}" class="img-responsive" alt=""></figure></a>
+                                        <a href="javascript:void(0)"><figure><img src="{{ asset(config("images_path.masonry_$i")) }}" class="img-responsive" alt=""></figure></a>
                                         <div class="mas-text">
                                             <div class="post-cat"><a href="javascript:void(0)">Fashion</a></div>
                                             <h4 class="mas-title"><a href="javascript:void(0)">It is a long <em>established</em> fact that a reader</a></h4>
@@ -93,19 +83,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="item">
-                                    <div class="mas-item masonry-sm">
-                                        <a href="javascript:void(0)"><figure><img src="{{ asset('/bower_components/osru-template-assets/assets/images/masonry/257x223-12.jpg') }}" class="img-responsive" alt=""></figure></a>
-                                        <div class="mas-text">
-                                            <div class="post-cat"><a href="javascript:void(0)">Fashion</a></div>
-                                            <h4 class="mas-title"><a href="javascript:void(0)">It is a long <em>established</em> fact that a reader</a></h4>
-                                            <div class="mas-details">
-                                                <p>There are many variations of passages of Lorem Ipsum available</p>
-                                                <a href="javascript:void(0)" class="read-more">{{ trans('app.read_more') }} &#8702;</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                @endfor
                             </div>
                         </div>
                     </div>
@@ -138,7 +116,7 @@
                     @for($i = 1; $i < 7; $i++)
                     <div class="media meida-md">
                         <div class="media-left">
-                            <a href="javascript:void(0)"><img src="{{ asset("/bower_components/osru-template-assets/assets/images/370x300-$i.jpg") }}" class="media-object" alt=""></a>
+                            <a href="javascript:void(0)"><img src="{{ asset(config("images_path.homepage_main_latest_$i")) }}" class="media-object" alt=""></a>
                         </div>
 
                         <div class="media-body">
@@ -166,25 +144,11 @@
 
                     <div id="macy-container" class="grid-masonry">
                         {{-- Data trending posts (slide) --}}
+                        @for($i = 1; $i < 4; $i++)
                         <article class="grid_post card-post">
                             <figure>
                                 <a href="javascript:void(0)" class="grid_image">
-                                    <img src="{{ asset('/bower_components/osru-template-assets/assets/images/950x1312-1.jpg') }}" class="img-responsive" alt="">
-                                </a>
-                                <figcaption>
-                                    <div class="post-cat"><a href="javascript:void(0)">Fashion</a></div>
-                                    <h4 class="grid_post_title"><a href="javascript:void(0)">There are <em>many variations</em> of passages of Lorem Ipsum</a></h4>
-                                    <div class="entry-meta">
-                                        <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21, 2018</time> </span>
-                                        <span class="comment-link"><a href="javascript:void(0)"><i class="fa fa-comment-o" aria-hidden="true"></i>9 {{ trans('app.comments') }}</a></span>
-                                    </div>
-                                </figcaption>
-                            </figure>
-                        </article>
-                        <article class="grid_post card-post">
-                            <figure>
-                                <a href="javascript:void(0)" class="grid_image">
-                                    <img src="{{ asset('/bower_components/osru-template-assets/assets/images/950x654-1.jpg') }}" class="img-responsive" alt="">
+                                    <img src="{{ asset(config("images_path.homepage_masonry_between_$i")) }}" class="img-responsive" alt="">
                                 </a>
                                 <figcaption>
                                     <div class="post-cat"><a href="javascript:void(0)">Fashion</a></div>
@@ -196,28 +160,14 @@
                                 </figcaption>
                             </figure>
                         </article>
-                        <article class="grid_post card-post">
-                            <figure>
-                                <a href="javascript:void(0)" class="grid_image">
-                                    <img src="{{ asset('/bower_components/osru-template-assets/assets/images/950x654-2.jpg') }}" class="img-responsive" alt="">
-                                </a>
-                                <figcaption>
-                                    <div class="post-cat"><a href="javascript:void(0)">Fashion</a></div>
-                                    <h4 class="grid_post_title"><a href="javascript:void(0)">Pellentesque nec lectus nec ante laoreet ornare.</a></h4>
-                                    <div class="entry-meta">
-                                        <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21, 2018</time> </span>
-                                        <span class="comment-link"><a href="javascript:void(0)"><i class="fa fa-comment-o" aria-hidden="true"></i>9 {{ trans('app.comments') }}</a></span>
-                                    </div>
-                                </figcaption>
-                            </figure>
-                        </article>
+                        @endfor
                         {{-- End data trending posts (slide) --}}
                     </div>
                     {{-- Demo data lastest posts --}}
                     @for($i = 6; $i < 8; $i ++)
                     <div class="media meida-md">
                         <div class="media-left">
-                            <a href="javascript:void(0)"><img src="{{ asset("/bower_components/osru-template-assets/assets/images/370x300-$i.jpg") }}" class="media-object" alt=""></a>
+                            <a href="javascript:void(0)"><img src="{{ asset(config("images_path.homepage_main_latest_$i")) }}" class="media-object" alt=""></a>
                         </div>
                         <div class="media-body">
                             <div class="post-header">
@@ -264,7 +214,7 @@
                         {{-- Data popular posts --}}
                         <div class="media latest_post">
                             <a class="media-left" href="javascript:void(0)">
-                                <img src="{{ asset('/bower_components/osru-template-assets/assets/images/100x70-3.jpg') }}" class="media-object" alt="">
+                                <img src="{{ asset(config('images_path.small_latest_post_image')) }}" class="media-object" alt="">
                             </a>
                             <div class="media-body">
                                 <h6 class="media-heading"><a href="javascript:void(0)">The <em>Best Street-Style</em> Pics From Copenhagen</a></h6>
@@ -295,21 +245,14 @@
                             <h3 class="title">{{ trans('app.category') }}</h3>
                             <span class="title-shape title-shape-dark"></span>
                         </div>
-
-                        <a class="category" href="javascript:void(0)">
-                            <figure><img src="{{ asset('/bower_components/osru-template-assets/assets/images/category-1.jpg') }}" class="img-responsive" alt=""></figure>
-                            <div class="category_name">Fashion</div>
-                        </a>
-
-                        <a class="category" href="javascript:void(0)">
-                            <figure><img src="{{ asset('/bower_components/osru-template-assets/assets/images/category-2.jpg') }}" class="img-responsive" alt=""></figure>
-                            <div class="category_name">Travel</div>
-                        </a>
-
-                        <a class="category" href="javascript:void(0)">
-                            <figure><img src="{{ asset('/bower_components/osru-template-assets/assets/images/category-3.jpg') }}" class="img-responsive" alt=""></figure>
-                            <div class="category_name">Life Style</div>
-                        </a>
+                        {{-- Data category --}}
+                        @for($i = 1; $i < 4; $i++)
+                            <a class="category" href="javascript:void(0)">
+                                <figure><img src="{{ asset(config("images_path.category_image_$i")) }}" class="img-responsive" alt=""></figure>
+                                <div class="category_name">Fashion</div>
+                            </a>
+                        @endfor
+                        {{-- End data category --}}
                     </div>
                 </aside>
             </div>

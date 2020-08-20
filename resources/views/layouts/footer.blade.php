@@ -6,7 +6,7 @@
                     {{-- Data company info --}}
                     <div class="footer-box">
                         <div class="footer-logo">
-                            <img src="{{ asset('/bower_components/osru-template-assets/assets/images/logo-white.png') }}" class="img-responsive" alt="logo">
+                            <img src="{{ asset(config('images_path.logo_white')) }}" class="img-responsive" alt="logo">
                         </div>
                         <p>It is a long established fact that a reader<br>
                             will be distracted by the readable content of<br>
@@ -50,7 +50,7 @@
                         {{-- Data latest posts --}}
                         <div class="media latest_post">
                             <a class="media-left" href="javascript:void(0)">
-                                <img src="{{ asset('/bower_components/osru-template-assets/assets/images/100x70-1.jpg') }}" class="media-object" alt="">
+                                <img src="{{ asset(config('images_path.small_latest_post_image')) }}" class="media-object" alt="">
                             </a>
                             <div class="media-body">
                                 <h6 class="media-heading"><a href="javascript:void(0)">The <em>Best Street-Style</em> Pics Copenhagen</a></h6>
