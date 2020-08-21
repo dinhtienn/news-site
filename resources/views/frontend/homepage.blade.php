@@ -232,10 +232,18 @@
                         </div>
 
                         <ul>
-                            <li class="li-facebook"><a href="javascript:void(0)" target="_blank"><i class="fa fa-facebook"></i> Facebook</a></li>
-                            <li class="li-twitter"><a href="javascript:void(0)" target="_blank"><i class="fa fa-twitter"></i> Twitter</a></li>
-                            <li class="li-google-plus"><a href="javascript:void(0)" target="_blank"><i class="fa fa-google-plus"></i> Google +</a></li>
-                            <li class="li-pinterest"><a href="javascript:void(0)" target="_blank"><i class="fa fa-pinterest-p"></i> Pinterest</a></li>
+                            <li class="li-facebook">
+                                <a href="javascript:void(0)" target="_blank"><i class="fa fa-facebook"></i> Facebook</a>
+                            </li>
+                            <li class="li-twitter">
+                                <a href="javascript:void(0)" target="_blank"><i class="fa fa-twitter"></i> Twitter</a>
+                            </li>
+                            <li class="li-google-plus">
+                                <a href="javascript:void(0)" target="_blank"><i class="fa fa-google-plus"></i> Google +</a>
+                            </li>
+                            <li class="li-pinterest">
+                                <a href="javascript:void(0)" target="_blank"><i class="fa fa-pinterest-p"></i> Pinterest</a>
+                            </li>
                         </ul>
                     </div>
 
@@ -260,22 +268,5 @@
 @endsection
 
 @push('after-js')
-    <script>
-        var masonry = new Macy({
-            container: '#macy-container',
-            trueOrder: false,
-            waitForImages: false,
-            useOwnImageLoader: false,
-            debug: true,
-            mobileFirst: true,
-            columns: 1,
-            margin: 2,
-            breakAt: {
-                1200: 2,
-                992: 3,
-                768: 2,
-                480: 1
-            }
-        });
-    </script>
+    <script src="{{ asset('frontend/js/home.js') }}"></script>
 @endpush

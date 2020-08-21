@@ -4,7 +4,9 @@
             <div class="col-sm-6 col-md-7">
                 <div class="header-nav">
                     <ul>
-                        <li><span class="headre-weather"><i class="fa fa-calendar-check-o"></i>&nbsp; Thursday, January 25 {{-- data --}}</span></li>
+                        <li>
+                            <span class="headre-weather"><i class="fa fa-calendar-check-o"></i>&nbsp; Thursday, January 25 {{-- data --}}</span>
+                        </li>
                         <li><a href="javascript:void(0)">{{ trans('app.contact') }}</a></li>
                     </ul>
                 </div>
@@ -163,11 +165,17 @@
         <div class="social_share_btn">
             <h3 class="widget-title">{{ trans('app.subscribe') }}</h3>
             <ul>
-                <li class="li-facebook"><a href="javascript:void(0)" target="_blank"><i class="fa fa-facebook"></i> Facebook</a></li>
-                <li class="li-twitter"><a href="javascript:void(0)" target="_blank"><i class="fa fa-twitter"></i> Twitter</a></li>
-                <li class="li-google-plus"><a href="javascript:void(0)" target="_blank"><i class="fa fa-google-plus"></i> Google
-                        +</a></li>
-                <li class="li-pinterest"><a href="javascript:void(0)" target="_blank"><i class="fa fa-pinterest-p"></i> Pinterest</a>
+                <li class="li-facebook">
+                    <a href="javascript:void(0)" target="_blank"><i class="fa fa-facebook"></i> Facebook</a>
+                </li>
+                <li class="li-twitter">
+                    <a href="javascript:void(0)" target="_blank"><i class="fa fa-twitter"></i> Twitter</a>
+                </li>
+                <li class="li-google-plus">
+                    <a href="javascript:void(0)" target="_blank"><i class="fa fa-google-plus"></i> Google +</a>
+                </li>
+                <li class="li-pinterest">
+                    <a href="javascript:void(0)" target="_blank"><i class="fa fa-pinterest-p"></i> Pinterest</a>
                 </li>
             </ul>
         </div>
