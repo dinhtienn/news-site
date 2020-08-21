@@ -1,7 +1,7 @@
 @extends('layouts.frontend_master')
 
 @section('main-content')
-    <div class="parallax page_header" data-parallax-bg-image="{{ asset('/bower_components/osru-template-assets/assets/images/header-bg.jpg') }}"
+    <div class="parallax page_header" data-parallax-bg-image="{{ asset('bower_components/osru-template-assets/assets/images/header-bg.jpg') }}"
          data-parallax-direction="left">
         <div class="container">
             <div class="row">
@@ -29,7 +29,7 @@
                             <article class="grid_post">
                                 <figure>
                                     <a href="javascript:void(0)" class="grid_image">
-                                        <img src="{{ asset("/bower_components/osru-template-assets/assets/images/grid-$i.jpg") }}" class="img-responsive" alt="">
+                                        <img src="{{ asset("bower_components/osru-template-assets/assets/images/grid-$i.jpg") }}" class="img-responsive" alt="">
                                     </a>
                                     <figcaption>
                                         <div class="post-cat"><a href="javascript:void(0)">Fashion</a></div>
@@ -72,22 +72,5 @@
 @endsection
 
 @push('after-js')
-    <script>
-        var masonry = new Macy({
-            container: '#macy-container',
-            trueOrder: false,
-            waitForImages: false,
-            useOwnImageLoader: false,
-            debug: true,
-            mobileFirst: true,
-            columns: 1,
-            margin: 30,
-            breakAt: {
-                1200: 3,
-                992: 3,
-                768: 2,
-                480: 2
-            }
-        });
-</script>
+    <script src="{{ asset('frontend/js/detail_category.js') }}"></script>
 @endpush

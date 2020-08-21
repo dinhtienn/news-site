@@ -9,7 +9,7 @@
             @for ($i = 1; $i < 5; $i++)
                 <div class="media latest_post">
                     <a class="media-left" href="javascript:void(0)">
-                        <img src="{{ asset("/bower_components/osru-template-assets/assets/images/100x70-$i.jpg") }}" class="media-object" alt="">
+                        <img src="{{ asset("bower_components/osru-template-assets/assets/images/100x70-$i.jpg") }}" class="media-object" alt="">
                     </a>
                     <div class="media-body">
                         <h6 class="media-heading"><a href="javascript:void(0)">The <em>Best Street-Style</em> Pics Copenhagen</a></h6>
@@ -26,7 +26,7 @@
             @for ($i = 1; $i < 5; $i++)
                 <div class="media latest_post">
                     <a class="media-left" href="javascript:void(0)">
-                        <img src="{{ asset("/bower_components/osru-template-assets/assets/images/100x70-$i.jpg") }}" class="media-object" alt="">
+                        <img src="{{ asset("bower_components/osru-template-assets/assets/images/100x70-$i.jpg") }}" class="media-object" alt="">
                     </a>
                     <div class="media-body">
                         <h6 class="media-heading"><a href="javascript:void(0)">The <em>Best Street-Style</em> Pics Copenhagen</a></h6>

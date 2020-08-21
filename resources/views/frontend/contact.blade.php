@@ -1,7 +1,7 @@
 @extends('layouts.frontend_master')
 
 @section('main-content')
-    <div class="parallax page_header" data-parallax-bg-image="{{ asset('/bower_components/osru-template-assets/assets/images/header-bg.jpg') }}"
+    <div class="parallax page_header" data-parallax-bg-image="{{ asset('bower_components/osru-template-assets/assets/images/header-bg.jpg') }}"
          data-parallax-direction="left">
         <div class="container">
             <div class="row">
@@ -19,6 +19,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
+                    {{-- Data contact --}}
                     <div class="contact-info">
                         <div class="contact-address">
                             <div class="contact-text">
@@ -28,7 +29,7 @@
                             <div class="address-info">
                                 <div class="media">
                                     <div class="pull-left">
-                                        <img src="{{ asset('/bower_components/osru-template-assets/assets/images/icon/agenda.png') }}" class="img-responsive" alt="">
+                                        <img src="{{ asset('bower_components/osru-template-assets/assets/images/icon/agenda.png') }}" class="img-responsive" alt="">
                                     </div>
                                     <div class="media-body">
                                         <h4 class="addon-title">{{ trans('app.address') }}</h4>
@@ -41,7 +42,7 @@
                             <div class="address-info">
                                 <div class="media">
                                     <div class="pull-left">
-                                        <img src="{{ asset('/bower_components/osru-template-assets/assets/images/icon/email.png') }}" class="img-responsive" alt="">
+                                        <img src="{{ asset('bower_components/osru-template-assets/assets/images/icon/email.png') }}" class="img-responsive" alt="">
                                     </div>
                                     <div class="media-body">
                                         <h4 class="addon-title">{{ trans('app.email') }}</h4>
@@ -54,7 +55,7 @@
                             <div class="address-info">
                                 <div class="media">
                                     <div class="pull-left">
-                                        <img src="{{ asset('/bower_components/osru-template-assets/assets/images/icon/phone.png') }}" class="img-responsive" alt="">
+                                        <img src="{{ asset('bower_components/osru-template-assets/assets/images/icon/phone.png') }}" class="img-responsive" alt="">
                                     </div>
                                     <div class="media-body">
                                         <h4 class="addon-title">{{ trans('app.phone_number') }}</h4>
@@ -66,6 +67,7 @@
                             </div>
                         </div>
                     </div>
+                    {{-- End data contact --}}
                 </div>
                 <div class="col-sm-6">
                     <div class="contact-form">

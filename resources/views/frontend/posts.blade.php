@@ -1,7 +1,7 @@
 @extends('layouts.frontend_master')
 
 @section('main-content')
-    <div class="parallax page_header" data-parallax-bg-image="{{ asset('/bower_components/osru-template-assets/assets/images/header-bg.jpg') }}" data-parallax-direction="left">
+    <div class="parallax page_header" data-parallax-bg-image="{{ asset('bower_components/osru-template-assets/assets/images/header-bg.jpg') }}" data-parallax-direction="left">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
@@ -37,14 +37,14 @@
                                 </div>
                             </header>
                             <figure>
-                                <img src="{{ asset('/bower_components/osru-template-assets/assets/images/details-4.jpg') }}" alt="" class="aligncenter img-responsive">
+                                <img src="{{ asset('bower_components/osru-template-assets/assets/images/details-4.jpg') }}" alt="" class="aligncenter img-responsive">
                             </figure>
                             <h3>It is a long established fact that a reader will be distracted. </h3>
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
                             <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
                             <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle.</p>
-                            <a href="{{ asset('/bower_components/osru-template-assets/assets/images/details-2.jpg') }}" class="fluidbox_img">
-                                <img src="{{ asset('/bower_components/osru-template-assets/assets/images/details-2.jpg') }}" alt="Image" class="alignright img-responsive">
+                            <a href="{{ asset('bower_components/osru-template-assets/assets/images/details-2.jpg') }}" class="fluidbox_img">
+                                <img src="{{ asset('bower_components/osru-template-assets/assets/images/details-2.jpg') }}" alt="Image" class="alignright img-responsive">
                             </a>
                             <p> Oh, you're gonna be in a coma, all right. I care deeply for nature. I care deeply for nature. I'm a monster. I don't criticize you! And if you're worried about criticism, sometimes a diet is the best defense.</p>
                             <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
@@ -54,7 +54,7 @@
                             <h3>There are many variations of passages of Lorem Ipsum available.</h3>
                             <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
                             <p>
-                                <a href="{{ asset('/bower_components/osru-template-assets/assets/images/details-5.jpg') }}" class="fluidbox_img"><img src="{{ asset('/bower_components/osru-template-assets/assets/images/details-5.jpg') }}" alt="Image" class="alignleft img-responsive"></a>
+                                <a href="{{ asset('bower_components/osru-template-assets/assets/images/details-5.jpg') }}" class="fluidbox_img"><img src="{{ asset('bower_components/osru-template-assets/assets/images/details-5.jpg') }}" alt="Image" class="alignleft img-responsive"></a>
                                 Oh, you're gonna be in a coma, all right. I care deeply for nature. I care deeply for nature. I'm a monster. I don't criticize you! And if you're worried about criticism, sometimes a diet is the best defense.
                             </p>
                             <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
@@ -91,7 +91,7 @@
                         <div class="author-bio">
                             {{-- Data author --}}
                             <div class="author-img">
-                                <a href="javascript:void(0)"><img alt="Johnny Doe" src="{{ asset('/bower_components/osru-template-assets/assets/images/about-avatar.jpg') }}" class="avatar img-responsive"></a>
+                                <a href="javascript:void(0)"><img alt="Johnny Doe" src="{{ asset('bower_components/osru-template-assets/assets/images/about-avatar.jpg') }}" class="avatar img-responsive"></a>
                             </div>
 
                             <div class="author-info">
@@ -118,7 +118,7 @@
                                 <article class="post_article item_related">
                                     <a class="post_img" href="javascript:void(0)">
                                         <figure>
-                                            <img class="img-responsive" src="{{ asset("/bower_components/osru-template-assets/assets/images/400x280-$i.jpg") }}" alt="">
+                                            <img class="img-responsive" src="{{ asset("bower_components/osru-template-assets/assets/images/400x280-$i.jpg") }}" alt="">
                                         </figure>
                                     </a>
                                     <h4><a href="javascript:void(0)">Ut et nunc a <em><strong>dolor sodales</strong></em> lacinia quis ac justo.</a></h4>
@@ -134,7 +134,7 @@
                         {{-- Data comments --}}
                         <div class="media">
                             <div class="media-left">
-                                <img src="{{ asset('/bower_components/osru-template-assets/assets/images/img_avatar1.png') }}" alt="" class="media-object">
+                                <img src="{{ asset('bower_components/osru-template-assets/assets/images/img_avatar1.png') }}" alt="" class="media-object">
                             </div>
                             <div class="media-body">
                                 <h4 class="media-heading">Jahangir Alom
@@ -144,7 +144,7 @@
                                 <a href="javascript:void(0)" class="btn link-btn btn-rounded">{{ trans('app.reply') }} ⇾</a>
                                 <div class="media">
                                     <div class="media-left">
-                                        <img src="{{ asset('/bower_components/osru-template-assets/assets/images/img_avatar2.png') }}" alt="Demo Avatar Jane Doe" class="media-object">
+                                        <img src="{{ asset('bower_components/osru-template-assets/assets/images/img_avatar2.png') }}" alt="Demo Avatar Jane Doe" class="media-object">
                                     </div>
                                     <div class="media-body">
                                         <h4 class="media-heading">Jane Doe
@@ -159,7 +159,7 @@
                         </div>
                         <div class="media">
                             <div class="media-left">
-                                <img src="{{ asset('/bower_components/osru-template-assets/assets/images/img_avatar1.png') }}" alt="" class="media-object">
+                                <img src="{{ asset('bower_components/osru-template-assets/assets/images/img_avatar1.png') }}" alt="" class="media-object">
                             </div>
                             <div class="media-body">
                                 <h4 class="media-heading">John Doe

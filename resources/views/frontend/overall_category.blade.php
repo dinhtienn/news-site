@@ -27,7 +27,7 @@
                             <div class="col-sm-6">
                                 <article class="grid_post">
                                     <figure>
-                                        <a href="javascript:void(0)" class="grid_image"><img src="{{ asset('/bower_components/osru-template-assets/assets/images/400x280-24.jpg') }}" class="img-responsive" alt=""></a>
+                                        <a href="javascript:void(0)" class="grid_image"><img src="{{ asset('bower_components/osru-template-assets/assets/images/400x280-24.jpg') }}" class="img-responsive" alt=""></a>
                                         <figcaption>
                                             <div class="entry-meta">
                                                     <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21, 2018</time></span>
