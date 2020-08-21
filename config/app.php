@@ -123,6 +123,8 @@ return [
 
     'cipher' => 'AES-256-CBC',
 
+    'number_instagram_images' => 20,
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers

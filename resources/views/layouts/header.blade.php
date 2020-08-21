@@ -29,11 +29,9 @@
     <div class="container">
         <div class="attr-nav">
             <ul>
-                <li><a href="javascript:void(0)" data-toggle="modal" data-target="#user-modal"><i
-                                class="fa fa-user"></i></a></li>
+                <li><a href="javascript:void(0)" data-toggle="modal" data-target="#user-modal"><i class="fa fa-user"></i></a></li>
                 <li class="side-menu"><a href="javascript:void(0)"><i class="fa fa-bars"></i></a></li>
-                <li id="btn-search1"><a href="javascript:void(0)" id="btn-search2"><i class="fa fa-search"></i></a>
-                </li>
+                <li id="btn-search1"><a href="javascript:void(0)" id="btn-search2"><i class="fa fa-search"></i></a></li>
             </ul>
         </div>
 
@@ -70,8 +68,7 @@
                                 <li class="dropdown">
                                     <a href="javascript:void(0)" class="dropdown-toggle">Masonry Layout</a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="javascript:void(0)">Post Masonry + Left
-                                                Sidebar</a></li>
+                                        <li><a href="javascript:void(0)">Post Masonry + Left Sidebar</a></li>
                                         <li><a href="javascript:void(0)">Post Masonry + no Sidebar</a>
                                         </li>
                                     </ul>
@@ -97,32 +94,29 @@
                             <div class="block-mega-menu">
                                 <div class="mega-cat-menu">
                                     <ul class="nav nav-tabs menu-tabs">
-                                        @for($i = 1; $i < 4; $i++)
-                                            <li class="@if($i == 3) active @endif"><a href="#cat{{ $i }}" data-toggle="tab">Fashion</a></li>
+                                        @for ($i = 1; $i < 4; $i++)
+                                            <li class="@if ($i == 3) active @endif"><a href="#cat{{ $i }}" data-toggle="tab">Fashion</a></li>
                                         @endfor
                                     </ul>
                                 </div>
                                 <div class="mega-cat-article">
-
                                     <div class="tab-content menu-tab-content">
-                                        @for($j = 1; $j < 4; $j++)
-                                        <div class="tab-pane @if($j == 3) active @endif" id="cat{{ $j }}">
-                                            <div class="row">
-                                                @for($i = 1; $i < 5; $i++)
-                                                <div class="col-sm-3">
-                                                    <article class="post_article">
-                                                        <a class="post_img" href="javascript:void(0)">
-                                                            <figure><img class="img-responsive" alt=""
-                                                                         src="{{ asset(config("images_path.submenu_thumbnail_$i")) }}"></figure>
-                                                            <span class="post__icon post__icon--video"></span>
-                                                        </a>
-                                                        <h4><a href="javascript:void(0)">Ut et nunc a <em><strong>dolor
-                                                                        sodales</strong></em> lacinia quis ac justo.</a></h4>
-                                                    </article>
+                                        @for ($j = 1; $j < 4; $j++)
+                                            <div class="tab-pane @if ($j == 3) active @endif" id="cat{{ $j }}">
+                                                <div class="row">
+                                                    @for ($i = 1; $i < 5; $i++)
+                                                        <div class="col-sm-3">
+                                                            <article class="post_article">
+                                                                <a class="post_img" href="javascript:void(0)">
+                                                                    <figure><img class="img-responsive" alt="" src="{{ asset(config("images_path.submenu_thumbnail_$i")) }}"></figure>
+                                                                    <span class="post__icon post__icon--video"></span>
+                                                                </a>
+                                                                <h4><a href="javascript:void(0)">Ut et nunc a <em><strong>dolor sodales</strong></em> lacinia quis ac justo.</a></h4>
+                                                            </article>
+                                                        </div>
+                                                    @endfor
                                                 </div>
-                                                @endfor
                                             </div>
-                                        </div>
                                         @endfor
                                     </div>
                                 </div>
@@ -131,7 +125,6 @@
                     </ul>
                 </li>
                 {{-- End data menu --}}
-
                 <li><a href="javascript:void(0)">{{ trans('app.contact') }}</a></li>
             </ul>
         </div>
@@ -178,7 +171,6 @@
                 </li>
             </ul>
         </div>
-
     </div>
 
     <div class="side-overlay"></div>

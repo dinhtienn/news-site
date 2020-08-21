@@ -10,7 +10,7 @@
                     <div class="tab-pane fade in active" id="login">
                         <div class="form-content text-center">
                             <h2>{{ trans('auth.login') }}</h2>
-                            <p>{{ trans('app.choose_one_of_the_following_methods') }}.</p>
+                            <p>{{ trans('app.choose_one_following_method') }}.</p>
                             <div class="social-btn">
                                 <a href="javascript:void(0)" class="btn btn-fb"><i class="fa fa-facebook"></i>{{ trans('app.with') }} Facebook</a>
                             </div>
@@ -52,7 +52,7 @@
                                 <input class="form-control" name="confirm_password" id="r_pass" placeholder="{{ trans('app.confirm_password') }}" type="text">
                             </div>
                             <div class="block-content">
-                                <div><i class="fa fa-shield"></i><span>{{ trans('auth.your_password_are_encrypted_and_secured') }}</span></div>
+                                <div><i class="fa fa-shield"></i><span>{{ trans('auth.password_are_encrypted') }}</span></div>
                             </div>
                             <a href="javascript:void(0)" class="btn link-btn btn-block btn-rounded">{{ trans('auth.register') }} &#8702;</a>
                         </div>

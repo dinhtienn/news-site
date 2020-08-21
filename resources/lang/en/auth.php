@@ -11,5 +11,5 @@ return [
     'dont_have_account' => 'Don\'t have an account',
     'sign_up_now' => 'Sign up Now',
     'sign_up_for_free' => 'Sign Up For Free',
-    'your_password_are_encrypted_and_secured' => 'Your Password at website are encrypted and Secured',
+    'password_are_encrypted' => 'Your Password at website are encrypted and Secured',
 ];

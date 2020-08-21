@@ -9,5 +9,5 @@ return [
     'dont_have_account' => 'Bạn chưa có tài khoản',
     'sign_up_now' => 'Đăng ký ngay',
     'sign_up_for_free' => 'Đăng ký miễn phí',
-    'your_password_are_encrypted_and_secured' => 'Mật khẩu của bạn được mã hoá và bảo mật an toàn trên website',
+    'password_are_encrypted' => 'Mật khẩu của bạn được mã hoá và bảo mật an toàn trên website',
 ];

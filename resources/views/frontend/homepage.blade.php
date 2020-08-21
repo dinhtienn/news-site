@@ -50,39 +50,39 @@
                     <div class="row mas-m">
                         <div class="col-xs-6 col-sm-6 mas-p">
                             <div class="masonry-slide1 owl-carousel owl-theme">
-                                @for($i = 9; $i < 11; $i++)
-                                <div class="item">
-                                    <div class="mas-item masonry-sm">
-                                        <a href="javascript:void(0)"><figure><img src="{{ asset(config("images_path.masonry_$i")) }}" class="img-responsive" alt=""></figure></a>
-                                        <div class="mas-text">
-                                            <div class="post-cat"><a href="javascript:void(0)">Fashion</a></div>
-                                            <h4 class="mas-title"><a href="javascript:void(0)">It is a long <em>established</em> fact that a reader</a></h4>
-                                            <div class="mas-details">
-                                                <p>There are many variations of passages of Lorem Ipsum available</p>
-                                                <a href="javascript:void(0)" class="read-more">{{ trans('app.read_more') }} &#8702;</a>
+                                @for ($i = 9; $i < 11; $i++)
+                                    <div class="item">
+                                        <div class="mas-item masonry-sm">
+                                            <a href="javascript:void(0)"><figure><img src="{{ asset(config("images_path.masonry_$i")) }}" class="img-responsive" alt=""></figure></a>
+                                            <div class="mas-text">
+                                                <div class="post-cat"><a href="javascript:void(0)">Fashion</a></div>
+                                                <h4 class="mas-title"><a href="javascript:void(0)">It is a long <em>established</em> fact that a reader</a></h4>
+                                                <div class="mas-details">
+                                                    <p>There are many variations of passages of Lorem Ipsum available</p>
+                                                    <a href="javascript:void(0)" class="read-more">{{ trans('app.read_more') }} &#8702;</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
                                 @endfor
                             </div>
                         </div>
                         <div class="col-xs-6 col-sm-6 mas-p">
                             <div class="masonry-slide2 owl-carousel owl-theme">
-                                @for($i = 11; $i < 13; $i++)
-                                <div class="item">
-                                    <div class="mas-item masonry-sm">
-                                        <a href="javascript:void(0)"><figure><img src="{{ asset(config("images_path.masonry_$i")) }}" class="img-responsive" alt=""></figure></a>
-                                        <div class="mas-text">
-                                            <div class="post-cat"><a href="javascript:void(0)">Fashion</a></div>
-                                            <h4 class="mas-title"><a href="javascript:void(0)">It is a long <em>established</em> fact that a reader</a></h4>
-                                            <div class="mas-details">
-                                                <p>There are many variations of passages of Lorem Ipsum available</p>
-                                                <a href="javascript:void(0)" class="read-more">{{ trans('app.read_more') }} &#8702;</a>
+                                @for ($i = 11; $i < 13; $i++)
+                                    <div class="item">
+                                        <div class="mas-item masonry-sm">
+                                            <a href="javascript:void(0)"><figure><img src="{{ asset(config("images_path.masonry_$i")) }}" class="img-responsive" alt=""></figure></a>
+                                            <div class="mas-text">
+                                                <div class="post-cat"><a href="javascript:void(0)">Fashion</a></div>
+                                                <h4 class="mas-title"><a href="javascript:void(0)">It is a long <em>established</em> fact that a reader</a></h4>
+                                                <div class="mas-details">
+                                                    <p>There are many variations of passages of Lorem Ipsum available</p>
+                                                    <a href="javascript:void(0)" class="read-more">{{ trans('app.read_more') }} &#8702;</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
                                 @endfor
                             </div>
                         </div>
@@ -113,83 +113,82 @@
                 </div>
                 <main class="col-sm-8 col-md-7 content p_r_40">
                     {{-- Demo data latest posts --}}
-                    @for($i = 1; $i < 7; $i++)
-                    <div class="media meida-md">
-                        <div class="media-left">
-                            <a href="javascript:void(0)"><img src="{{ asset(config("images_path.homepage_main_latest_$i")) }}" class="media-object" alt=""></a>
-                        </div>
+                    @for ($i = 1; $i < 7; $i++)
+                        <div class="media meida-md">
+                            <div class="media-left">
+                                <a href="javascript:void(0)"><img src="{{ asset(config("images_path.homepage_main_latest_$i")) }}" class="media-object" alt=""></a>
+                            </div>
 
-                        <div class="media-body">
-                            <div class="post-header">
-                                <div class="post-cat"><span>{{ trans('app.in') }}</span> <a href="javascript:void(0)">Fashion</a></div>
-                                <h3 class="media-heading"><a href="javascript:void(0)">It is a long <em>established fact</em> that a reader will be distracted.</a></h3>
-                                <div class="entry-meta">
-                                    <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21, 2018</time> </span>
-                                    <span class="comment-link"><a href="javascript:void(0)"><i class="fa fa-comment-o" aria-hidden="true"></i>9 {{ trans('app.comments') }}</a></span>
+                            <div class="media-body">
+                                <div class="post-header">
+                                    <div class="post-cat"><span>{{ trans('app.in') }}</span> <a href="javascript:void(0)">Fashion</a></div>
+                                    <h3 class="media-heading"><a href="javascript:void(0)">It is a long <em>established fact</em> that a reader will be distracted.</a></h3>
+                                    <div class="entry-meta">
+                                        <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21, 2018</time> </span>
+                                        <span class="comment-link"><a href="javascript:void(0)"><i class="fa fa-comment-o" aria-hidden="true"></i>9 {{ trans('app.comments') }}</a></span>
+                                    </div>
                                 </div>
-                            </div>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority.</p>
-                            <div class="element-block">
-                                <a href="javascript:void(0)" class="btn link-btn btn-outline btn-rounded">{{ trans('app.reading') }} &#8702;</a>
-                                <div class="post_share">
-                                    <a class="smedia facebook fa fa-facebook" href="javascript:void(0)"></a>
-                                    <a class="smedia twitter fa fa-twitter" href="javascript:void(0)"></a>
-                                    <a class="smedia googleplus fa fa-google-plus" href="javascript:void(0)"></a>
+                                <p>There are many variations of passages of Lorem Ipsum available, but the majority.</p>
+                                <div class="element-block">
+                                    <a href="javascript:void(0)" class="btn link-btn btn-outline btn-rounded">{{ trans('app.reading') }} &#8702;</a>
+                                    <div class="post_share">
+                                        <a class="smedia facebook fa fa-facebook" href="javascript:void(0)"></a>
+                                        <a class="smedia twitter fa fa-twitter" href="javascript:void(0)"></a>
+                                        <a class="smedia googleplus fa fa-google-plus" href="javascript:void(0)"></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                     @endfor
                     {{-- End demo data latest posts --}}
 
                     <div id="macy-container" class="grid-masonry">
                         {{-- Data trending posts (slide) --}}
-                        @for($i = 1; $i < 4; $i++)
-                        <article class="grid_post card-post">
-                            <figure>
-                                <a href="javascript:void(0)" class="grid_image">
-                                    <img src="{{ asset(config("images_path.homepage_masonry_between_$i")) }}" class="img-responsive" alt="">
-                                </a>
-                                <figcaption>
-                                    <div class="post-cat"><a href="javascript:void(0)">Fashion</a></div>
-                                    <h4 class="grid_post_title"><a href="javascript:void(0)">Aenean consectetur justo et finibus ornare.</a></h4>
-                                    <div class="entry-meta">
-                                        <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21, 2018</time> </span>
-                                        <span class="comment-link"><a href="javascript:void(0)"><i class="fa fa-comment-o" aria-hidden="true"></i>9 {{ trans('app.comments') }}</a></span>
-                                    </div>
-                                </figcaption>
-                            </figure>
-                        </article>
+                        @for ($i = 1; $i < 4; $i++)
+                            <article class="grid_post card-post">
+                                <figure>
+                                    <a href="javascript:void(0)" class="grid_image">
+                                        <img src="{{ asset(config("images_path.homepage_masonry_between_$i")) }}" class="img-responsive" alt="">
+                                    </a>
+                                    <figcaption>
+                                        <div class="post-cat"><a href="javascript:void(0)">Fashion</a></div>
+                                        <h4 class="grid_post_title"><a href="javascript:void(0)">Aenean consectetur justo et finibus ornare.</a></h4>
+                                        <div class="entry-meta">
+                                            <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21, 2018</time> </span>
+                                            <span class="comment-link"><a href="javascript:void(0)"><i class="fa fa-comment-o" aria-hidden="true"></i>9 {{ trans('app.comments') }}</a></span>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                            </article>
                         @endfor
                         {{-- End data trending posts (slide) --}}
                     </div>
                     {{-- Demo data lastest posts --}}
-                    @for($i = 6; $i < 8; $i ++)
-                    <div class="media meida-md">
-                        <div class="media-left">
-                            <a href="javascript:void(0)"><img src="{{ asset(config("images_path.homepage_main_latest_$i")) }}" class="media-object" alt=""></a>
-                        </div>
-                        <div class="media-body">
-                            <div class="post-header">
-                                <div class="post-cat"><span>{{ trans('app.in') }}</span> <a href="javascript:void(0)">Fashion</a></div>
-                                <h4 class="media-heading"><a href="javascript:void(0)">It is a long <em>established fact</em> that a reader will be distracted.</a></h4>
-                                <div class="entry-meta">
-                                    <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21, 2018</time> </span>
-                                    <span class="comment-link"><a href="javascript:void(0)"><i class="fa fa-comment-o" aria-hidden="true"></i>9 {{ trans('app.comments') }}</a></span>
-                                </div>
-
+                    @for ($i = 6; $i < 8; $i ++)
+                        <div class="media meida-md">
+                            <div class="media-left">
+                                <a href="javascript:void(0)"><img src="{{ asset(config("images_path.homepage_main_latest_$i")) }}" class="media-object" alt=""></a>
                             </div>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority.</p>
-                            <div class="element-block">
-                                <a href="javascript:void(0)" class="btn link-btn btn-outline btn-rounded">{{ trans('app.reading') }} &#8702;</a>
-                                <div class="post_share">
-                                    <a class="smedia facebook fa fa-facebook" href="javascript:void(0)"></a>
-                                    <a class="smedia twitter fa fa-twitter" href="javascript:void(0)"></a>
-                                    <a class="smedia googleplus fa fa-google-plus" href="javascript:void(0)"></a>
+                            <div class="media-body">
+                                <div class="post-header">
+                                    <div class="post-cat"><span>{{ trans('app.in') }}</span> <a href="javascript:void(0)">Fashion</a></div>
+                                    <h4 class="media-heading"><a href="javascript:void(0)">It is a long <em>established fact</em> that a reader will be distracted.</a></h4>
+                                    <div class="entry-meta">
+                                        <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21, 2018</time> </span>
+                                        <span class="comment-link"><a href="javascript:void(0)"><i class="fa fa-comment-o" aria-hidden="true"></i>9 {{ trans('app.comments') }}</a></span>
+                                    </div>
+                                </div>
+                                <p>There are many variations of passages of Lorem Ipsum available, but the majority.</p>
+                                <div class="element-block">
+                                    <a href="javascript:void(0)" class="btn link-btn btn-outline btn-rounded">{{ trans('app.reading') }} &#8702;</a>
+                                    <div class="post_share">
+                                        <a class="smedia facebook fa fa-facebook" href="javascript:void(0)"></a>
+                                        <a class="smedia twitter fa fa-twitter" href="javascript:void(0)"></a>
+                                        <a class="smedia googleplus fa fa-google-plus" href="javascript:void(0)"></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                     @endfor
                     {{-- End demo data latest posts --}}
 
@@ -246,7 +245,7 @@
                             <span class="title-shape title-shape-dark"></span>
                         </div>
                         {{-- Data category --}}
-                        @for($i = 1; $i < 4; $i++)
+                        @for ($i = 1; $i < 4; $i++)
                             <a class="category" href="javascript:void(0)">
                                 <figure><img src="{{ asset(config("images_path.category_image_$i")) }}" class="img-responsive" alt=""></figure>
                                 <div class="category_name">Fashion</div>
