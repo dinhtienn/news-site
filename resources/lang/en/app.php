@@ -46,4 +46,7 @@ return [
     'submit' => 'Submit',
     'introduce' => 'Introduce',
     'salary' => 'Salary',
+    'english' => 'English',
+    'vietnamese' => 'Vietnamese',
+    'overall_category' => 'Overall Category',
 ];

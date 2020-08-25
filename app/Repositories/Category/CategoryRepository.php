@@ -11,4 +11,9 @@ class CategoryRepository extends BaseRepository implements CategoryRepositoryInt
     {
         return Category::class;
     }
+
+    public function getCategoriesMenu()
+    {
+        return $this->model->where('parent_id', null)->with('children')->get();
+    }
 }

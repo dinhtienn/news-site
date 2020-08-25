@@ -11,4 +11,12 @@ class PostRepository extends BaseRepository implements PostRepositoryInterface
     {
         return Post::class;
     }
+
+    public function getLatestPost($limit)
+    {
+        return $this->model
+            ->orderBy('created_at', 'desc')
+            ->take($limit)
+            ->get();
+    }
 }

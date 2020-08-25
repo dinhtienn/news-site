@@ -3,25 +3,33 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-4 col-md-4">
-                    {{-- Data company info --}}
                     <div class="footer-box">
                         <div class="footer-logo">
-                            <img src="{{ asset(config('images_path.logo_white')) }}" class="img-responsive" alt="logo">
+                            <img
+                                src="{{ asset(config('images_path.logo_white')) }}"
+                                class="img-responsive"
+                                alt="logo"
+                            >
                         </div>
-                        <p>It is a long established fact that a reader<br>
-                            will be distracted by the readable content of<br>
-                            a page when looking at its layout. The point<br>
-                            of using Lorem Ipsum</p>
+                        <p>{{ config('company.info.short_description') }}</p>
                         <div class="textwidget">
                             <p>
-                                457 BIgBlue Street, Suite 4A<br>
-                                New York, NY 10013<br>
-                                <span>(315) 5512-2579</span><br>
+                                {{ config('company.info.address') }}<br>
+                                <span>
+                                    {{ config('company.info.phone') }}
+                                </span><br>
                             </p>
                         </div>
-                        <p>{{ trans('app.contact_us_on') }} <a href="https://osruhtml.bdtask.com/cdn-cgi/l/email-protection#563f38303916332e373b263a337835393b"><strong><span class="__cf_email__" data-cfemail="046d6a626b44617c65697468612a676b69">[email&#160;protected]</span></strong></a></p>
+                        <p>{{ trans('app.contact_us_on') }}
+                            <a href="#">
+                                <strong>
+                                    <span class="__cf_email__">
+                                        {{ config('company.info.email') }}
+                                    </span>
+                                </strong>
+                            </a>
+                        </p>
                     </div>
-                    {{-- End data company info --}}
                 </div>
                 <div class="hidden-sm col-md-3">
                     <div class="footer-box">
@@ -30,7 +38,13 @@
                             <li>
                                 <div class="icon"><i class="ti-twitter"></i></div>
                                 <div class="tweet-text">
-                                    {{ trans('app.source') }} <a target="_blank" href="javascript:void(0)">@envato</a> #ThemeForest: <a target="_blank" href="javascript:void(0)">https://t.co/jGyLLggygN</a>
+                                    {{ trans('app.source') }}
+                                    <a
+                                        target="_blank"
+                                        href="{{ config('company.social.instagram') }}"
+                                    >
+                                        @dinhtienn
+                                    </a>
                                 </div>
                             </li>
                         </ul>
@@ -40,26 +54,37 @@
                     <div class="footer-box">
                         <h3 class="widget-title title-white">{{ trans('app.need_help') }}</h3>
                         <ul class="footer-cat">
-                            <li><a href="javascript:void(0)">{{ trans('app.feedback') }}</a></li>
+                            <li><a href="#">{{ trans('app.feedback') }}</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-sm-5 col-md-3">
                     <div class="footer-box">
                         <h3 class="widget-title title-white">{{ trans('app.latest_post') }}</h3>
-                        {{-- Data latest posts --}}
-                        <div class="media latest_post">
-                            <a class="media-left" href="javascript:void(0)">
-                                <img src="{{ asset(config('images_path.small_latest_post_image')) }}" class="media-object" alt="">
-                            </a>
-                            <div class="media-body">
-                                <h6 class="media-heading"><a href="javascript:void(0)">The <em>Best Street-Style</em> Pics Copenhagen</a></h6>
-                                <div class="entry-meta">
-                                    <span class="entry-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><time datetime="2018-01-21T19:00">Jan 21, 2018</time></span>
+                        @foreach($latestPostsFooter as $post)
+                            <div class="media latest_post">
+                                <a class="media-left" href="#">
+                                    <img src="{{ $post->thumbnail }}"
+                                         class="media-object"
+                                         alt="">
+                                </a>
+                                <div class="media-body">
+                                    <h6 class="media-heading two-lines">
+                                        <a href="#">
+                                            {{ $post->title }}
+                                        </a>
+                                    </h6>
+                                    <div class="entry-meta">
+                                        <span class="entry-date">
+                                            <i class="fa fa-calendar-o" aria-hidden="true"></i>
+                                            <time>
+                                                {{ $post->created_at->diffForHumans() }}
+                                            </time>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        {{-- End data latest posts --}}
+                        @endforeach
                     </div>
                 </div>
             </div>

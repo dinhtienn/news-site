@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::namespace('Frontend')->group(function () {
+Route::group(['namespace' => 'Frontend'], function () {
     Route::get('/', 'HomeController@index')->name('home');
+
+    Route::get('/set-locale', 'FrontendController@setLocale')->name('set_locale');
 });

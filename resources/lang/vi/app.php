@@ -46,4 +46,7 @@ return [
     'submit' => 'Xác nhận',
     'introduce' => 'Giới thiệu',
     'salary' => 'Lương mong muốn',
+    'english' => 'Tiếng Anh',
+    'vietnamese' => 'Tiếng Việt',
+    'overall_category' => 'Danh mục chung',
 ];

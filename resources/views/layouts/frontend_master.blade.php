@@ -18,6 +18,7 @@
     <link href="{{ asset('/bower_components/osru-template-assets/assets/css/magnific-popup.css') }}" rel="stylesheet">
     <link href="{{ asset('/bower_components/osru-template-assets/assets/css/fluidbox.min.css') }}" rel="stylesheet">
     <link href="{{ asset('/bower_components/osru-template-assets/assets/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('/frontend/css/app.css') }}" rel="stylesheet">
 </head>
 <body class="news-layout3">
     <div class="main-content animsition">
