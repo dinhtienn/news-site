@@ -2,7 +2,9 @@
 
 namespace App\Repositories\Writer;
 
-interface WriterRepositoryInterface
+use App\Repositories\BaseRepositoryInterface;
+
+interface WriterRepositoryInterface extends BaseRepositoryInterface
 {
     public function model();
 }

@@ -2,7 +2,9 @@
 
 namespace App\Repositories\User;
 
-interface UserRepositoryInterface
+use App\Repositories\BaseRepositoryInterface;
+
+interface UserRepositoryInterface extends BaseRepositoryInterface
 {
     public function model();
 }

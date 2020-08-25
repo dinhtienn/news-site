@@ -2,7 +2,9 @@
 
 namespace App\Repositories\Permission;
 
-interface PermissionRepositoryInterface
+use App\Repositories\BaseRepositoryInterface;
+
+interface PermissionRepositoryInterface extends BaseRepositoryInterface
 {
     public function model();
 }

@@ -5,7 +5,7 @@ namespace App\Repositories;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
-abstract class BaseRepository implements RepositoryContract
+abstract class BaseRepository implements BaseRepositoryInterface
 {
     /**
      * The repository model.

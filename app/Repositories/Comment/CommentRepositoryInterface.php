@@ -2,7 +2,9 @@
 
 namespace App\Repositories\Comment;
 
-interface CommentRepositoryInterface
+use App\Repositories\BaseRepositoryInterface;
+
+interface CommentRepositoryInterface extends BaseRepositoryInterface
 {
     public function model();
 }

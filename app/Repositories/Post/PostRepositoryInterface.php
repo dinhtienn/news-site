@@ -2,7 +2,9 @@
 
 namespace App\Repositories\Post;
 
-interface PostRepositoryInterface
+use App\Repositories\BaseRepositoryInterface;
+
+interface PostRepositoryInterface extends BaseRepositoryInterface
 {
     public function model();
 }

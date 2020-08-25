@@ -2,7 +2,7 @@
 
 namespace App\Repositories;
 
-interface RepositoryContract
+interface BaseRepositoryInterface
 {
     public function all(array $columns = ['*']);
 
