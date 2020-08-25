@@ -15,7 +15,7 @@ $factory->define(Post::class, function (Faker $faker) {
         'user_id' => Role::where('name', 'writer')->first()->users->random()->id,
         'title' => $title,
         'slug' => str_slug($title, '-'),
-        'content' => $faker->randomHtml(2,3),
+        'content' => $faker->paragraph($nbSentences = 50, $variableNbSentences = true),
         'admin_id' => Role::where('name', 'admin')->first()->users->random()->id,
         'status' => 3,
         'thumbnail' => $faker->imageUrl($width = 640, $height = 480),
