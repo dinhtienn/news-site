@@ -80,14 +80,13 @@
         <div class="collapse navbar-collapse" id="navbar-menu">
             <ul class="nav navbar-nav navbar-center" data-in="navFadeInDown" data-out="navFadeOutUp">
                 <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropdown-toggle">
+                    <a href="{{ route('category.overall') }}" class="dropdown-toggle">
                         {{ trans('app.overall_category') }}
                     </a>
                     <ul class="dropdown-menu">
                         @foreach($categories as $category)
                             <li @if (count($category->children) > 0) class="dropdown" @endif>
-                                <a
-                                    href="javascript:void(0)"
+                                <a href="{{ route('category.detail', ['slug' => $category->slug]) }}"
                                     @if (count($category->children) > 0)
                                         class="dropdown-toggle"
                                     @endif
@@ -98,7 +97,7 @@
                                     <ul class="dropdown-menu">
                                         @foreach($category->children as $childCate)
                                             <li>
-                                                <a href="javascript:void(0)">
+                                                <a href="{{ route('category.detail', ['slug' => $category->slug]) }}">
                                                     {{ $childCate->name }}
                                                 </a>
                                             </li>
@@ -113,7 +112,7 @@
                 @foreach($categories as $category)
                     <li @if (count($category->children) > 0) class="dropdown" @endif>
                         <a
-                            href="javascript:void(0)"
+                            href="{{ route('category.detail', ['slug' => $category->slug]) }}"
                             @if (count($category->children) > 0)
                                 class="dropdown-toggle"
                             @endif
@@ -124,7 +123,7 @@
                             <ul class="dropdown-menu">
                                 @foreach($category->children as $childCate)
                                     <li>
-                                        <a href="javascript:void(0)">
+                                        <a href="{{ route('category.detail', ['slug' => $category->slug]) }}">
                                             {{ $childCate->name }}
                                         </a>
                                     </li>
@@ -140,7 +139,7 @@
     </div>
 
     <div class="side" id="side">
-        <a href="javascript:void(0)" class="close-side"><i class="ti-close"></i></a>
+        <a href="#" class="close-side"><i class="ti-close"></i></a>
         <div class="widget">
             <h3 class="widget-title">{{ trans('app.popular') }}</h3>
             <ul class="link">
@@ -151,30 +150,32 @@
         <div class="latest_post_widget">
             <h3 class="widget-title">{{ trans('app.latest_post') }}</h3>
 
-            {{-- Data latest posts --}}
             @if (isset($latestPostsSidebar))
                 @foreach ($latestPostsSidebar as $post)
                     <div class="media latest_post">
-                        <a class="media-left" href="#">
+                        <a class="media-left" href="{{ route('post.detail', ['slug' => $post->slug]) }}">
                             <img src="{{ $post->thumbnail }}"
                                  class="media-object"
                                  alt="{{ $post->slug }}">
                         </a>
                         <div class="media-body">
                             <h6 class="media-heading two-lines">
-                                <a href="#">{{ $post->title }}</a>
+                                <a href="{{ route('post.detail', ['slug' => $post->slug]) }}">{{ $post->title }}</a>
                             </h6>
                             <div class="entry-meta">
                                 <span class="entry-date">
                                     <i class="fa fa-calendar-o" aria-hidden="true"></i>
                                     <time>{{ $post->created_at->diffForHumans() }}</time>
                                 </span>
+                                <span>
+                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                    {{ views($post)->count() }}
+                                </span>
                             </div>
                         </div>
                     </div>
                 @endforeach
             @endif
-            {{-- End data latest posts --}}
         </div>
 
         <div class="social_share_btn">

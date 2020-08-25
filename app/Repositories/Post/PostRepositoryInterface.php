@@ -9,4 +9,6 @@ interface PostRepositoryInterface extends BaseRepositoryInterface
     public function model();
 
     public function getLatestPost($limit);
+
+    public function getPaginationPosts($skip, $limit);
 }

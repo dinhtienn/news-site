@@ -19,4 +19,13 @@ class PostRepository extends BaseRepository implements PostRepositoryInterface
             ->take($limit)
             ->get();
     }
+
+    public function getPaginationPosts($skip, $limit)
+    {
+        return $this->model
+            ->orderBy('created_at', 'desc')
+            ->skip($skip)
+            ->take($limit)
+            ->get();
+    }
 }

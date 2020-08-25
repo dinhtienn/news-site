@@ -3,9 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use CyrildeWit\EloquentViewable\InteractsWithViews;
+use CyrildeWit\EloquentViewable\Contracts\Viewable;
 
-class Post extends Model
+class Post extends Model implements Viewable
 {
+    use InteractsWithViews;
+
     const STATUS = [
         0 => 'waiting',
         1 => 'rejected',
