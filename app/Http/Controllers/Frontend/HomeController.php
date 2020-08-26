@@ -44,7 +44,7 @@ class HomeController extends FrontendController
             );
         } else {
             $latestPosts = $this->postRepository->getPaginationPosts(
-                $page * config('company.limit_posts.latest_posts_homepage'),
+                ($page - 1) * config('company.limit_posts.latest_posts_homepage'),
                 config('company.limit_posts.latest_posts_homepage')
             );
             $dataPagination = $this->paginationLatestPosts($page);
@@ -92,6 +92,11 @@ class HomeController extends FrontendController
                 : intdiv($totalPosts, config('company.limit_posts.latest_posts_homepage')) - 1;
         $dataPagination->previous = ($page > 1) ? true : false;
         $dataPagination->next = ($page < $dataPagination->lastPage) ? true : false;
+        $dataPagination->routeName = 'home';
+        $dataPagination->previousRouteParams = ['page' => $page - 1];
+        $dataPagination->nextRouteParams = ['page' => $page + 1];
+        $dataPagination->firstRouteParams = ['page' => 1];
+        $dataPagination->lastRouteParams = ['page' => $dataPagination->lastPage];
 
         return $dataPagination;
     }
