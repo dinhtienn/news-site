@@ -12,8 +12,6 @@ use CyrildeWit\EloquentViewable\Support\Period;
 
 class CategoryController extends FrontendController
 {
-    protected $postRepository;
-    protected $categoryRepository;
     protected $tagRepository;
 
     public function __construct(
@@ -22,8 +20,6 @@ class CategoryController extends FrontendController
         TagRepository $tagRepository
     ) {
         parent::__construct($categoryRepository, $postRepository);
-        $this->postRepository = $postRepository;
-        $this->categoryRepository = $categoryRepository;
         $this->tagRepository = $tagRepository;
     }
 
