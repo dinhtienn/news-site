@@ -24,6 +24,7 @@ return [
         'popular_posts_sidebar'  => 5,
         'latest_tags' => 8,
         'category_detail' => 12,
+        'tag_detail' => 12,
     ],
     'cache_time' => [
         'latest_posts_layout' => 3600,

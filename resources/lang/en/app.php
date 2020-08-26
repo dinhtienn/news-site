@@ -49,4 +49,5 @@ return [
     'english' => 'English',
     'vietnamese' => 'Vietnamese',
     'overall_category' => 'Overall Category',
+    'all' => 'All',
 ];

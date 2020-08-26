@@ -49,4 +49,5 @@ return [
     'english' => 'Tiếng Anh',
     'vietnamese' => 'Tiếng Việt',
     'overall_category' => 'Danh mục chung',
+    'all' => 'Tất cả',
 ];

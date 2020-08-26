@@ -11,4 +11,12 @@ class TagRepository extends BaseRepository implements TagRepositoryInterface
     {
         return Tag::class;
     }
+
+    public function getLatestTags($limit)
+    {
+        return $this->model
+            ->orderBy('created_at', 'desc')
+            ->take($limit)
+            ->get();
+    }
 }

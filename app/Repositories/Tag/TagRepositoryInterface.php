@@ -6,5 +6,5 @@ use App\Repositories\BaseRepositoryInterface;
 
 interface TagRepositoryInterface extends BaseRepositoryInterface
 {
-    public function model();
+    public function getLatestTags($limit);
 }

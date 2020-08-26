@@ -19,7 +19,12 @@ class Post extends Model implements Viewable
 
     public function tags()
     {
-        return $this->belongsToMany(Tag::class);
+        return $this->belongsToMany(
+            Tag::class,
+            'tag_post',
+            'post_id',
+            'tag_id'
+        );
     }
 
     public function comments()
