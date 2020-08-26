@@ -4,6 +4,8 @@ namespace App\Repositories;
 
 interface BaseRepositoryInterface
 {
+    public function model();
+
     public function all(array $columns = ['*']);
 
     public function count();

@@ -6,5 +6,5 @@ use App\Repositories\BaseRepositoryInterface;
 
 interface RoleRepositoryInterface extends BaseRepositoryInterface
 {
-    public function model();
+
 }

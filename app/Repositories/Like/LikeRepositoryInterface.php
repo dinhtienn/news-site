@@ -6,5 +6,5 @@ use App\Repositories\BaseRepositoryInterface;
 
 interface LikeRepositoryInterface extends BaseRepositoryInterface
 {
-    public function model();
+
 }
