@@ -32,7 +32,7 @@ class FrontendController extends Controller
                 'category_menu',
                 config('company.cache_time.category_menu'),
                 function () {
-                    return $this->categoryRepository->getCategoriesMenu();
+                    return $this->categoryRepository->getCategories();
                 }
             )
         );
