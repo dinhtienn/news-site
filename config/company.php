@@ -21,6 +21,9 @@ return [
         'related_posts' => 4,
         'hot_posts' => 6,
         'popular_posts_homepage' => 6,
+        'popular_posts_sidebar'  => 5,
+        'latest_tags' => 8,
+        'category_detail' => 12,
     ],
     'cache_time' => [
         'latest_posts_layout' => 3600,
@@ -29,6 +32,8 @@ return [
         'hot_posts' => 3600 * 3,
         'popular_posts_homepage' => 3600 * 12,
         'pagination' => 3600 * 24,
+        'popular_posts_sidebar' => 3600,
+        'latest_tags' => 3600 * 12,
     ],
     'count_views_cooldown_time' => 60 * 10,
     'hot_posts_views_per' => 1,
