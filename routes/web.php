@@ -18,11 +18,11 @@ Route::group(['namespace' => 'Frontend'], function () {
 
     Route::get('/set-locale', 'FrontendController@setLocale')->name('set_locale');
 
-    Route::get('/bai-viet/{slug}', 'PostController@show')->name('post.detail');
+    Route::get('/post/{slug}', 'PostController@show')->name('post.detail');
 
-    Route::get('/danh-muc-chung', 'CategoryController@index')->name('category.overall');
+    Route::get('/overall-category', 'CategoryController@index')->name('category.overall');
 
-    Route::get('/danh-muc/{slug}', 'CategoryController@show')->name('category.detail');
+    Route::get('/category/{slug}', 'CategoryController@show')->name('category.detail');
 
     Route::get('/tag/{name}', 'TagController@show')->name('tag.detail');
 });
