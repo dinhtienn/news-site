@@ -11,8 +11,7 @@ class PostController extends FrontendController
     public function __construct(
         CategoryRepository $categoryRepository,
         PostRepository $postRepository
-    )
-    {
+    ) {
         parent::__construct($categoryRepository, $postRepository);
     }
 

@@ -11,15 +11,11 @@ use CyrildeWit\EloquentViewable\Support\Period;
 
 class HomeController extends FrontendController
 {
-    protected $postRepository;
-
     public function __construct(
         CategoryRepository $categoryRepository,
         PostRepository $postRepository
-    )
-    {
+    ) {
         parent::__construct($categoryRepository, $postRepository);
-        $this->postRepository = $postRepository;
     }
 
     public function index(Request $request)

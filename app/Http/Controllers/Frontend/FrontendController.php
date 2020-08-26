@@ -20,8 +20,7 @@ class FrontendController extends Controller
     public function __construct(
         CategoryRepository $categoryRepository,
         PostRepository $postRepository
-    )
-    {
+    ) {
         $this->categoryRepository = $categoryRepository;
         $this->postRepository = $postRepository;
         $this->getLocale();
