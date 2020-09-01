@@ -21,6 +21,7 @@ class PostController extends FrontendController
         $relatedPosts = $post
             ->category
             ->posts()
+            ->where('id', '!=', $post->id)
             ->orderBy('created_at', 'desc')
             ->take(config('company.limit_posts.related_posts'))
             ->get(['title', 'slug', 'thumbnail']);

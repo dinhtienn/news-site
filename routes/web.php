@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Auth::routes();
 
 Route::group(['namespace' => 'Frontend'], function () {
     Route::get('/', 'HomeController@index')->name('home');
@@ -25,4 +28,20 @@ Route::group(['namespace' => 'Frontend'], function () {
     Route::get('/category/{slug}', 'CategoryController@show')->name('category.detail');
 
     Route::get('/tag/{name}', 'TagController@show')->name('tag.detail');
+});
+
+Route::group(['namespace' => 'Api'], function () {
+    Route::get('/check-user', 'UserApiController@checkUser')->name('api.check.user');
+
+    Route::get('/check-username', 'UserApiController@checkUsername')->name('api.check.username');
+
+    Route::get('/check-email', 'UserApiController@checkEmail')->name('api.check.email');
+});
+
+Route::group(['namespace' => 'Auth'], function () {
+    Route::get('/social-login/{provider}', 'SocialAuthController@redirectToProvider')
+        ->name('auth.social.login');
+
+    Route::get('/auth/{provider}/callback', 'SocialAuthController@handleProviderCallback')
+        ->name('auth.social.callback');
 });

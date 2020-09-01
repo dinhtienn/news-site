@@ -7,7 +7,7 @@
                         <li>
                             <span class="headre-weather">
                                 <i class="fa fa-calendar-check-o"></i>
-                                &nbsp; {{ $dateNow }}
+                                &nbsp; {{ $dateNow ?? '' }}
                             </span>
                         </li>
                         <li>
@@ -24,8 +24,7 @@
             <div class="col-sm-6 col-md-5">
                 <ul class="top-socia-share">
                     <li>
-                        <a href="{{ config('company.social.facebook') }}"
-                           target="_blank">
+                        <a href="{{ config('company.social.facebook') }}" target="_blank">
                             <i class="fa fa-facebook"></i>
                         </a>
                         <a href="{{ config('company.social.twitter') }}" target="_blank">
@@ -35,11 +34,33 @@
                             <i class="fa fa-instagram"></i>
                         </a>
                     </li>
-                    <li>
-                        <a href="#" data-toggle="modal" data-target="#user-modal">
-                            {{ trans('auth.login') }} / {{ trans('auth.register') }}
-                        </a>
-                    </li>
+                    @if (!auth()->check())
+                        <li>
+                            <a href="#"
+                               id="btn-auth"
+                               data-toggle="modal"
+                               data-target="#user-modal">
+                                {{ trans('auth.login') }} / {{ trans('auth.register') }}
+                            </a>
+                        </li>
+                    @else
+                        <li>
+                            <a href="#">
+                                {{ auth()->user()->username }}
+                            </a>
+                        </li>
+                        <li>
+                            <a id="btn-logout" href="#">
+                                {{ trans('auth.logout') }}
+                            </a>
+                            <form id="logout-form"
+                                  class="d-none"
+                                  action="{{ route('logout') }}"
+                                  method="POST">
+                                @csrf
+                            </form>
+                        </li>
+                    @endif
                 </ul>
             </div>
         </div>
@@ -50,11 +71,18 @@
     <div class="container">
         <div class="attr-nav">
             <ul>
-                <li>
-                    <a href="#" data-toggle="modal" data-target="#user-modal">
-                        <i class="fa fa-user"></i>
-                    </a>
-                </li>
+                @if (auth()->check())
+                    @if (
+                        auth()->user()->role->name == 'admin' ||
+                        auth()->user()->role->name == 'writer'
+                    )
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#user-modal">
+                                <i class="fa fa-user"></i>
+                            </a>
+                        </li>
+                    @endif
+                @endif
                 <li class="side-menu">
                     <a href="#">
                         <i class="fa fa-bars"></i>
@@ -79,59 +107,61 @@
 
         <div class="collapse navbar-collapse" id="navbar-menu">
             <ul class="nav navbar-nav navbar-center" data-in="navFadeInDown" data-out="navFadeOutUp">
-                <li class="dropdown">
-                    <a href="{{ route('category.overall') }}" class="dropdown-toggle">
-                        {{ trans('app.overall_category') }}
-                    </a>
-                    <ul class="dropdown-menu">
-                        @foreach($categories as $category)
-                            <li @if (count($category->children) > 0) class="dropdown" @endif>
-                                <a href="{{ route('category.detail', ['slug' => $category->slug]) }}"
-                                    @if (count($category->children) > 0)
-                                        class="dropdown-toggle"
-                                    @endif
-                                >
-                                    {{ $category->name }}
-                                </a>
-                                @if (count($category->children) > 0)
-                                    <ul class="dropdown-menu">
-                                        @foreach($category->children as $childCate)
-                                            <li>
-                                                <a href="{{ route('category.detail', ['slug' => $category->slug]) }}">
-                                                    {{ $childCate->name }}
-                                                </a>
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                @endif
-                            </li>
-                        @endforeach
-                    </ul>
-                </li>
-
-                @foreach($categories as $category)
-                    <li @if (count($category->children) > 0) class="dropdown" @endif>
-                        <a
-                            href="{{ route('category.detail', ['slug' => $category->slug]) }}"
-                            @if (count($category->children) > 0)
-                                class="dropdown-toggle"
-                            @endif
-                        >
-                            {{ $category->name }}
+                @if (isset($categories))
+                    <li class="dropdown">
+                        <a href="{{ route('category.overall') }}" class="dropdown-toggle">
+                            {{ trans('app.overall_category') }}
                         </a>
-                        @if (count($category->children) > 0)
-                            <ul class="dropdown-menu">
-                                @foreach($category->children as $childCate)
-                                    <li>
-                                        <a href="{{ route('category.detail', ['slug' => $category->slug]) }}">
-                                            {{ $childCate->name }}
-                                        </a>
-                                    </li>
-                                @endforeach
-                            </ul>
-                        @endif
+                        <ul class="dropdown-menu">
+                            @foreach ($categories as $category)
+                                <li @if (count($category->children) > 0) class="dropdown" @endif>
+                                    <a href="{{ route('category.detail', ['slug' => $category->slug]) }}"
+                                        @if (count($category->children) > 0)
+                                            class="dropdown-toggle"
+                                        @endif
+                                    >
+                                        {{ $category->name }}
+                                    </a>
+                                    @if (count($category->children) > 0)
+                                        <ul class="dropdown-menu">
+                                            @foreach($category->children as $childCate)
+                                                <li>
+                                                    <a href="{{ route('category.detail', ['slug' => $category->slug]) }}">
+                                                        {{ $childCate->name }}
+                                                    </a>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    @endif
+                                </li>
+                            @endforeach
+                        </ul>
                     </li>
-                @endforeach
+
+                    @foreach($categories as $category)
+                        <li @if (count($category->children) > 0) class="dropdown" @endif>
+                            <a
+                                href="{{ route('category.detail', ['slug' => $category->slug]) }}"
+                                @if (count($category->children) > 0)
+                                    class="dropdown-toggle"
+                                @endif
+                            >
+                                {{ $category->name }}
+                            </a>
+                            @if (count($category->children) > 0)
+                                <ul class="dropdown-menu">
+                                    @foreach($category->children as $childCate)
+                                        <li>
+                                            <a href="{{ route('category.detail', ['slug' => $category->slug]) }}">
+                                                {{ $childCate->name }}
+                                            </a>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            @endif
+                        </li>
+                    @endforeach
+                @endif
 
                 <li><a href="#">{{ trans('app.contact') }}</a></li>
             </ul>

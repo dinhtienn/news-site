@@ -58,6 +58,23 @@
     <script src="{{ asset('/bower_components/osru-template-assets/assets/js/readingTime.min.js') }}"></script>
     <script src="{{ asset('/bower_components/osru-template-assets/assets/js/custom.js') }}"></script>
     <script src="{{ asset('/bower_components/osru-template-assets/assets/js/rocket-loader.js') }}"></script>
+    <script>
+        const checkUserRoute = "{{ route('api.check.user') }}";
+        const checkUsernameRoute = "{{ route('api.check.username') }}";
+        const checkEmailRoute = "{{ route('api.check.email') }}";
+
+        const failLoginMessage = "{{ trans('auth.login_email_fail') }}";
+        const duplicateUsernameMessage = "{{ trans('auth.duplicate_username') }}";
+        const duplicateEmailMessage = "{{ trans('auth.duplicate_email') }}";
+        const passwordLengthMessage = "{{ trans('auth.password_length') }}";
+        const notMatchPasswordMessage = "{{ trans('auth.not_match_password') }}";
+        const facebookClientId = "{{ config('services.facebook.client_id') }}";
+        @if ($errors->any())
+            const checkLoginSocialErrors = true;
+        @else
+            const checkLoginSocialErrors = false;
+        @endif
+    </script>
     <script src="{{ asset('/frontend/js/app.js') }}"></script>
     @stack('after-js')
 </body>
