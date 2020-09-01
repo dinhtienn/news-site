@@ -163,7 +163,11 @@
                     @endforeach
                 @endif
 
-                <li><a href="#">{{ trans('app.contact') }}</a></li>
+                <li>
+                    <a href="{{ route('contact') }}">
+                        {{ trans('app.contact') }}
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

@@ -18,6 +18,7 @@ class PostController extends FrontendController
     public function show(Request $request)
     {
         $post = $this->postRepository->getByColumn($request->slug, 'slug');
+        $post->load('tags');
         $relatedPosts = $post
             ->category
             ->posts()

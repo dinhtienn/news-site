@@ -54,7 +54,13 @@
                     <div class="footer-box">
                         <h3 class="widget-title title-white">{{ trans('app.need_help') }}</h3>
                         <ul class="footer-cat">
-                            <li><a href="#">{{ trans('app.feedback') }}</a></li>
+                            <li>
+                                <a href="{{ config('company.feedback_route') }}"
+                                    target="_blank"
+                                >
+                                    {{ trans('app.feedback') }}
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>

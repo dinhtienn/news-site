@@ -28,6 +28,8 @@ Route::group(['namespace' => 'Frontend'], function () {
     Route::get('/category/{slug}', 'CategoryController@show')->name('category.detail');
 
     Route::get('/tag/{name}', 'TagController@show')->name('tag.detail');
+
+    Route::get('/contact', 'ContactController')->name('contact');
 });
 
 Route::group(['namespace' => 'Api'], function () {

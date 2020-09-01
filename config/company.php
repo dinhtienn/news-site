@@ -39,4 +39,6 @@ return [
     'count_views_cooldown_time' => 60 * 10,
     'hot_posts_views_per' => 1,
     'popular_posts_views_per' => 3,
+    'feedback_route' => 'https://forms.gle/HkjAvRBw6q9rjJ8p9',
+    'feedback_result' => 'https://docs.google.com/spreadsheets/d/1RpCVLQyhJEWfl8dur9YXV_lVdWI7heFgkIjm2DMfy8U/edit?usp=sharing',
 ];
