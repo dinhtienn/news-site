@@ -60,35 +60,37 @@
                 </div>
                 <div class="col-sm-5 col-md-3">
                     <div class="footer-box">
-                        <h3 class="widget-title title-white">{{ trans('app.latest_post') }}</h3>
-                        @foreach($latestPostsFooter as $post)
-                            <div class="media latest_post">
-                                <a class="media-left" href="{{ route('post.detail', ['slug' => $post->slug]) }}">
-                                    <img src="{{ $post->thumbnail }}"
-                                         class="media-object"
-                                         alt="{{ $post->slug }}">
-                                </a>
-                                <div class="media-body">
-                                    <h6 class="media-heading two-lines">
-                                        <a href="{{ route('post.detail', ['slug' => $post->slug]) }}">
-                                            {{ $post->title }}
-                                        </a>
-                                    </h6>
-                                    <div class="entry-meta">
-                                        <span class="entry-date">
-                                            <i class="fa fa-calendar-o" aria-hidden="true"></i>
-                                            <time>
-                                                {{ $post->created_at->diffForHumans() }}
-                                            </time>
-                                        </span>
-                                        <span>
-                                            <i class="fa fa-eye" aria-hidden="true"></i>
-                                            {{ views($post)->count() }}
-                                        </span>
+                        @if (isset($latestPostsFooter))
+                            <h3 class="widget-title title-white">{{ trans('app.latest_post') }}</h3>
+                            @foreach($latestPostsFooter as $post)
+                                <div class="media latest_post">
+                                    <a class="media-left" href="{{ route('post.detail', ['slug' => $post->slug]) }}">
+                                        <img src="{{ $post->thumbnail }}"
+                                             class="media-object"
+                                             alt="{{ $post->slug }}">
+                                    </a>
+                                    <div class="media-body">
+                                        <h6 class="media-heading two-lines">
+                                            <a href="{{ route('post.detail', ['slug' => $post->slug]) }}">
+                                                {{ $post->title }}
+                                            </a>
+                                        </h6>
+                                        <div class="entry-meta">
+                                            <span class="entry-date">
+                                                <i class="fa fa-calendar-o" aria-hidden="true"></i>
+                                                <time>
+                                                    {{ $post->created_at->diffForHumans() }}
+                                                </time>
+                                            </span>
+                                            <span>
+                                                <i class="fa fa-eye" aria-hidden="true"></i>
+                                                {{ views($post)->count() }}
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        @endforeach
+                            @endforeach
+                        @endif
                     </div>
                 </div>
             </div>

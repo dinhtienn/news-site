@@ -43,7 +43,7 @@
                                                 </a>
                                             </span>
                                         </div>
-                                        <h4 class="grid_post_title two-lines">
+                                        <h4 class="grid_post_title two-lines two-lines-fix-height">
                                             <a href="{{ route('post.detail', ['slug' => $post->slug]) }}">
                                                 {{ $post->title }}
                                             </a>
