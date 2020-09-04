@@ -30,6 +30,10 @@ Route::group(['namespace' => 'Frontend'], function () {
     Route::get('/tag/{name}', 'TagController@show')->name('tag.detail');
 
     Route::get('/contact', 'ContactController')->name('contact');
+
+    Route::resource('writer-requests', 'WriterController')->only([
+        'create', 'store'
+    ]);
 });
 
 Route::group(['namespace' => 'Api'], function () {

@@ -50,4 +50,6 @@ return [
     'vietnamese' => 'Tiếng Việt',
     'overall_category' => 'Danh mục chung',
     'all' => 'Tất cả',
+    'success' => 'Thành công',
+    'request_writer_success' => 'Yêu cầu trở thành người viết bài của bạn đã được gửi đi!',
 ];

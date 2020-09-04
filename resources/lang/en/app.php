@@ -50,4 +50,6 @@ return [
     'vietnamese' => 'Vietnamese',
     'overall_category' => 'Overall Category',
     'all' => 'All',
+    'success' => 'Success',
+    'request_writer_success' => 'Your request to be a Writer successfully!',
 ];

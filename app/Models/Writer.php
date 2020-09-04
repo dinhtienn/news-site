@@ -6,6 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Writer extends Model
 {
+    protected $fillable = [
+        'phone',
+        'description',
+        'admin_id',
+        'user_id',
+        'salary',
+        'cv_path'
+    ];
+
     const STATUS = [
         0 => 'rejected',
         1 => 'accepted',

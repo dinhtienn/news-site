@@ -1,3 +1,5 @@
+import Swal from 'sweetalert2';
+
 // Facebook SDK
 window.fbAsyncInit = function() {
     FB.init({
@@ -117,8 +119,16 @@ function confirmPassword() {
     }
 }
 
-$( document ).ready(function() {
+$(document).ready(function() {
     if (checkLoginSocialErrors) {
         $('#btn-auth').click();
+    }
+
+    if (popupData) {
+        Swal.fire(
+            popupData.title,
+            popupData.content,
+            popupData.status
+        );
     }
 });

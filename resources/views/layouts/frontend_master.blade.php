@@ -74,6 +74,12 @@
         @else
             const checkLoginSocialErrors = false;
         @endif
+        @if (session('popup'))
+            const popupData = {};
+            popupData.status = "{{ session('popup')['status'] }}";
+            popupData.title = "{{ session('popup')['title'] }}";
+            popupData.content = "{{ session('popup')['content'] }}";
+        @endif
     </script>
     <script src="{{ asset('/frontend/js/app.js') }}"></script>
     @stack('after-js')
