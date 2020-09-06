@@ -18,6 +18,7 @@ class User extends Model implements AuthenticatableContract
         'password',
         'provider',
         'provider_id',
+        'role_id'
     ];
 
     protected $attributes = [

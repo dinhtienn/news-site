@@ -12,7 +12,8 @@ class Writer extends Model
         'admin_id',
         'user_id',
         'salary',
-        'cv_path'
+        'cv_path',
+        'status'
     ];
 
     const STATUS = [

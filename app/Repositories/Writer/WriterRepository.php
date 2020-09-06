@@ -11,4 +11,17 @@ class WriterRepository extends BaseRepository implements WriterRepositoryInterfa
     {
         return Writer::class;
     }
+
+    public function getPendingRequests()
+    {
+        return $this->where('admin_id', null)->with('user')->get();
+    }
+
+    public function getRejectedWriter()
+    {
+        return $this->model->where([
+            ['status', 0],
+            ['admin_id', '!=', null]
+        ])->with('user')->get();
+    }
 }

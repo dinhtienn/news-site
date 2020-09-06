@@ -64,5 +64,12 @@ return [
     'total_salary' => 'Tổng Lương',
     'month_salary' => 'Lương Tháng',
     'month_views' => 'Lượt Xem Tháng',
-    'most_posts_users' => 'Những cộng tác viên đăng bài nhiều nhất'
+    'most_posts_users' => 'Những cộng tác viên đăng bài nhiều nhất',
+    'pending_requests' => 'Yêu cầu chờ duyệt',
+    'rejected_requests' => 'Yêu cầu đã từ chốî',
+    'description' => 'Giới thiệu',
+    'see' => 'Xem',
+    'action' => 'Hành động',
+    'accept' => 'Đồng ý',
+    'reject' => 'Từ chối',
 ];

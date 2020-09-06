@@ -42,6 +42,14 @@ Route::group([
     'middleware' => 'check_if_admin'
 ], function () {
     Route::get('dashboard', 'DashboardController')->name('dashboard');
+
+    Route::get('/writer-requests/waiting', 'WriterController@index')->name('writer-requests.index');
+
+    Route::get('/writer-requests/rejected', 'WriterController@rejected')->name('writer-requests.rejected');
+
+    Route::get('/writer-requests/accept', 'WriterController@accept')->name('writer-requests.accept');
+
+    Route::get('/writer-requests/reject', 'WriterController@reject')->name('writer-requests.reject');
 });
 
 Route::group(['namespace' => 'Api'], function () {

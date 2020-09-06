@@ -65,4 +65,11 @@ return [
     'month_salary' => 'Month Salary',
     'month_views' => 'Month Views',
     'most_posts_users' => 'Top users who write posts this month',
+    'pending_requests' => 'Pending Requests',
+    'rejected_requests' => 'Rejected Requests',
+    'description' => 'Description',
+    'see' => 'See',
+    'action' => 'Action',
+    'accept' => 'Accept',
+    'reject' => 'Reject',
 ];
