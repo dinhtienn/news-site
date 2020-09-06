@@ -33,10 +33,27 @@
 
                     <li class="menu-title">{{ trans('app.company') }}</li>
                     <li>
-                        <a href="#" class="waves-effect">
+                        <a href="#" class="has-arrow waves-effect">
                             <i class="bx bx-user"></i>
                             <span>{{ trans('app.users') }}</span>
                         </a>
+                        <ul class="sub-menu" aria-expanded="false">
+                            <li>
+                                <a href="{{ route('users.user') }}">
+                                    {{ trans('app.user') }}
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('users.writer') }}">
+                                    {{ trans('app.writer') }}
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('users.admin') }}">
+                                    {{ trans('app.admin') }}
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
                         <a href="#" class="has-arrow waves-effect">
