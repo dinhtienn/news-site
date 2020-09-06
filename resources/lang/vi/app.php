@@ -72,4 +72,9 @@ return [
     'action' => 'Hành động',
     'accept' => 'Đồng ý',
     'reject' => 'Từ chối',
+    'user' => 'Người dùng',
+    'writer' => 'Cộng tác viên',
+    'admin' => 'Người quản trị',
+    'joined_at' => 'Tham gia từ',
+    'no_info' => 'Không xác định',
 ];

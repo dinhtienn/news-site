@@ -72,4 +72,9 @@ return [
     'action' => 'Action',
     'accept' => 'Accept',
     'reject' => 'Reject',
+    'user' => 'User',
+    'writer' => 'Writer',
+    'admin' => 'Admin',
+    'joined_at' => 'Joined at',
+    'no_info' => 'No information',
 ];
