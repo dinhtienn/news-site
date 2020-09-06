@@ -28,4 +28,19 @@ class PostRepository extends BaseRepository implements PostRepositoryInterface
             ->take($limit)
             ->get();
     }
+
+    public function countMonthPosts($month)
+    {
+        return $this->model
+            ->whereMonth('created_at', $month)
+            ->count();
+    }
+
+    public function getMonthPosts($month)
+    {
+        return $this->model
+            ->whereMonth('created_at', $month)
+            ->with('user')
+            ->get();
+    }
 }

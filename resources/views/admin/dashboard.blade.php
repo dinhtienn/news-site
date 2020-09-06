@@ -75,7 +75,7 @@
                                             @if (auth()->user()->role->name === 'writer')
                                                 <div class="col-6">
                                                     <h5 class="font-size-15">
-                                                        $1245 {{-- Demo data --}}
+                                                        {{ $personalMonthSalary }} VNĐ
                                                     </h5>
                                                     <p class="text-muted mb-0">
                                                         {{ trans('app.month_salary') }}
@@ -102,7 +102,7 @@
                                                     {{ trans('app.posts') }}
                                                 </p>
                                                 <h4 class="mb-0">
-                                                    1,235 {{-- Demo data --}}
+                                                    {{ $monthPosts }}
                                                 </h4>
                                             </div>
 
@@ -124,7 +124,7 @@
                                                     {{ trans('app.total_salary') }}
                                                 </p>
                                                 <h4 class="mb-0">
-                                                    $35, 723 {{-- Demo data --}}
+                                                    {{ $monthSalary }} VNĐ
                                                 </h4>
                                             </div>
 
@@ -146,7 +146,7 @@
                                                     {{ trans('app.month_views') }}
                                                 </p>
                                                 <h4 class="mb-0">
-                                                    $16.2 {{-- Demo data --}}
+                                                    {{ $monthViews }}
                                                 </h4>
                                             </div>
 
@@ -173,122 +173,34 @@
                                 {{ trans('app.most_posts_users') }}
                             </h4>
                             <div class="table-responsive">
-                                {{-- Demo data --}}
                                 <table class="table table-centered table-nowrap mb-0">
                                     <thead class="thead-light">
                                         <tr>
-                                            <th>
-                                                <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                                    <label class="custom-control-label" for="customCheck1">&nbsp;</label>
-                                                </div>
-                                            </th>
-                                            <th>Order ID</th>
-                                            <th>Billing Name</th>
-                                            <th>Date</th>
-                                            <th>Total</th>
-                                            <th>Payment Status</th>
-                                            <th>Payment Method</th>
+                                            <th>#</th>
+                                            <th>{{ trans('app.username') }}</th>
+                                            <th>{{ trans('app.email') }}</th>
+                                            <th>{{ trans('app.joined_at') }}</th>
+                                            <th>{{ trans('app.posts') }}</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>
-                                                <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="customCheck2">
-                                                    <label class="custom-control-label" for="customCheck2">&nbsp;</label>
-                                                </div>
-                                            </td>
-                                            <td><a href="#" class="text-body font-weight-bold">#SK2540</a> </td>
-                                            <td>Neal Matthews</td>
-                                            <td>
-                                                07 Oct, 2019
-                                            </td>
-                                            <td>
-                                                $400
-                                            </td>
-                                            <td>
-                                                <span class="badge badge-pill badge-soft-success font-size-12">Paid</span>
-                                            </td>
-                                            <td>
-                                                <i class="fab fa-cc-mastercard mr-1"></i> Mastercard
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="customCheck3">
-                                                    <label class="custom-control-label" for="customCheck3">&nbsp;</label>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <a href="#" class="text-body font-weight-bold">
-                                                    #SK2541
-                                                </a>
-                                            </td>
-                                            <td>Jamal Burnett</td>
-                                            <td>
-                                                07 Oct, 2019
-                                            </td>
-                                            <td>
-                                                $380
-                                            </td>
-                                            <td>
-                                                <span class="badge badge-pill badge-soft-danger font-size-12">
-                                                    Chargeback
-                                                </span>
-                                            </td>
-                                            <td>
-                                                <i class="fab fa-cc-visa mr-1"></i> Visa
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                        <td>
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck6">
-                                                <label class="custom-control-label" for="customCheck6">&nbsp;</label>
-                                            </div>
-                                        </td>
-                                        <td><a href="#" class="text-body font-weight-bold">#SK2544</a> </td>
-                                        <td>Ronald Taylor</td>
-                                        <td>
-                                            04 Oct, 2019
-                                        </td>
-                                        <td>
-                                            $404
-                                        </td>
-                                        <td>
-                                            <span class="badge badge-pill badge-soft-warning font-size-12">Refund</span>
-                                        </td>
-                                        <td>
-                                            <i class="fab fa-cc-visa mr-1"></i> Visa
-                                        </td>
-                                    </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="customCheck7">
-                                                    <label class="custom-control-label" for="customCheck7">&nbsp;</label>
-                                                </div>
-                                            </td>
-                                            <td><a href="#" class="text-body font-weight-bold">#SK2545</a> </td>
-                                            <td>Jacob Hunter</td>
-                                            <td>
-                                                04 Oct, 2019
-                                            </td>
-                                            <td>
-                                                $392
-                                            </td>
-                                            <td>
-                                                <span class="badge badge-pill badge-soft-success font-size-12">Paid</span>
-                                            </td>
-                                            <td>
-                                                <i class="fab fa-cc-paypal mr-1"></i> Paypal
-                                            </td>
-                                        </tr>
+                                        @php $index = 0; @endphp
+                                        @foreach ($topWriters as $writer)
+                                            @php $index++; @endphp
+                                            <tr>
+                                                <td>{{ $index }}</td>
+                                                <td>{{ $writer->username }}</td>
+                                                <td>{{ $writer->email }}</td>
+                                                <td>
+                                                    {{ $writer->created_at ? $writer->created_at->diffForHumans() : trans('app.no_info') }}
+                                                </td>
+                                                <td>
+                                                    {{ $writer->posts()->count() }}
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
-                                {{-- End demo data --}}
                             </div>
                         </div>
                     </div>
