@@ -54,7 +54,7 @@
                     <div class="footer-box">
                         <h3 class="widget-title title-white">{{ trans('app.need_help') }}</h3>
                         <ul class="footer-cat">
-                            @if (auth()->user()->role->name === 'user')
+                            @if (auth()->check() && auth()->user()->role->name === 'user')
                                 <li>
                                     <a href="{{ route('writer-requests.create') }}">
                                         {{ trans('app.register_writer') }}

@@ -77,7 +77,7 @@
                         auth()->user()->role->name == 'writer'
                     )
                         <li>
-                            <a href="#" data-toggle="modal" data-target="#user-modal">
+                            <a href="{{ route('dashboard') }}">
                                 <i class="fa fa-user"></i>
                             </a>
                         </li>
@@ -184,7 +184,7 @@
                         {{ trans('app.contact') }}
                     </a>
                 </li>
-                @if (auth()->user()->role->name === 'user')
+                @if (auth()->check() && auth()->user()->role->name === 'user')
                     <li>
                         <a href="{{ route('writer-requests.create') }}">
                             {{ trans('app.register_writer') }}

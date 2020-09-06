@@ -34,5 +34,6 @@ return [
     ),
 
     'tags' => 'Tags',
+    'dashboard' => 'Dashboard',
 
 ];

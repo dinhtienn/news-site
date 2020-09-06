@@ -52,4 +52,17 @@ return [
     'all' => 'Tất cả',
     'success' => 'Thành công',
     'request_writer_success' => 'Yêu cầu trở thành người viết bài của bạn đã được gửi đi!',
+    'design' => 'Thiết kế',
+    'develop' => 'Phát triển',
+    'main' => 'Chính',
+    'content' => 'Nội dung',
+    'company' => 'Công ty',
+    'posts' => 'Bài viết',
+    'waiting_posts' => 'Bài viết chờ duyệt',
+    'users' => 'Người dùng',
+    'welcome_back' => 'Chào mừng trở lại !',
+    'total_salary' => 'Tổng Lương',
+    'month_salary' => 'Lương Tháng',
+    'month_views' => 'Lượt Xem Tháng',
+    'most_posts_users' => 'Những cộng tác viên đăng bài nhiều nhất'
 ];

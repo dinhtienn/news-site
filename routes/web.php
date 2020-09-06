@@ -36,6 +36,14 @@ Route::group(['namespace' => 'Frontend'], function () {
     ]);
 });
 
+Route::group([
+    'namespace' => 'Admin',
+    'prefix' => '/admin',
+    'middleware' => 'check_if_admin'
+], function () {
+    Route::get('dashboard', 'DashboardController')->name('dashboard');
+});
+
 Route::group(['namespace' => 'Api'], function () {
     Route::get('/check-user', 'UserApiController@checkUser')->name('api.check.user');
 
