@@ -39,13 +39,27 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="waves-effect">
+                        <a href="#" class="has-arrow waves-effect">
                             <i class="bx bx-user-plus"></i>
                             <span>{{ trans('app.request_writer') }}</span>
                         </a>
+                        <ul class="sub-menu" aria-expanded="false">
+                            <li>
+                                <a href="{{ route('writer-requests.index') }}">
+                                    {{ trans('app.pending_requests') }}
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('writer-requests.rejected') }}">
+                                    {{ trans('app.rejected_requests') }}
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
-                        <a href="#" class="waves-effect">
+                        <a href="{{ config('company.feedback_result') }}"
+                           target="_blank"
+                           class="waves-effect">
                             <i class="bx bx-error"></i>
                             <span>{{ trans('app.feedback') }}</span>
                         </a>

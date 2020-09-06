@@ -6,6 +6,7 @@
 
     <title>OSRU</title>
     <link href="{{ asset('/favicon.ico') }}" rel="icon">
+    @yield('before-css')
     <link href="{{ asset('/bower_components/skote-template-assets/assets/css/bootstrap.min.css') }}"
           id="bootstrap-style"
           rel="stylesheet"
