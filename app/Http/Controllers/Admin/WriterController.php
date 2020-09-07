@@ -45,7 +45,7 @@ class WriterController extends AdminController
         DB::transaction(function () use ($request) {
             $this->writerRepository->updateById($request->get('id'), [
                 'admin_id' => Auth::id(),
-                'status' => 1
+                'status' => config('company.request_writer.accepted')
             ]);
             $writerRoleId = $this->roleRepository
                 ->getByColumn('writer', 'name')->id;

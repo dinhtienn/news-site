@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Repositories\Role\RoleRepositoryInterface as RoleRepository;
+
 class UserController extends AdminController
 {
     protected $roleRepository;
