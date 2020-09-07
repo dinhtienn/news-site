@@ -41,7 +41,9 @@ Route::group([
     'prefix' => '/admin',
     'middleware' => 'check_if_admin'
 ], function () {
-    Route::get('dashboard', 'DashboardController')->name('dashboard');
+    Route::get('/', 'DashboardController')->name('dashboard');
+
+    Route::get('/dashboard', 'DashboardController')->name('dashboard');
 
     Route::get('/writer-requests/waiting', 'WriterController@index')->name('writer-requests.index');
 
@@ -51,11 +53,17 @@ Route::group([
 
     Route::get('/writer-requests/reject', 'WriterController@reject')->name('writer-requests.reject');
 
-    Route::get('users/user', 'UserController@user')->name('users.user');
+    Route::get('/users/user', 'UserController@user')->name('users.user');
 
-    Route::get('users/writer', 'UserController@writer')->name('users.writer');
+    Route::get('/users/writer', 'UserController@writer')->name('users.writer');
 
-    Route::get('users/admin', 'UserController@admin')->name('users.admin');
+    Route::get('/users/admin', 'UserController@admin')->name('users.admin');
+
+    Route::get('/destroy/category', 'CategoryController@destroy')->name('category.destroy');
+
+    Route::resource('/category', 'CategoryController')->except([
+        'show', 'destroy'
+    ]);
 });
 
 Route::group(['namespace' => 'Api'], function () {

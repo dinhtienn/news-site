@@ -25,7 +25,8 @@
                 </li>
                 @if (auth()->user()->role->name === 'admin')
                     <li>
-                        <a href="#" class="waves-effect">
+                        <a href="{{ route('category.index') }}"
+                           class="waves-effect">
                             <i class="bx bx-list-check"></i>
                             <span>{{ trans('app.category') }}</span>
                         </a>

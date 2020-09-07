@@ -49,4 +49,8 @@ return [
         'accepted' => 1,
         'rejected' => 0,
     ],
+    'category' => [
+        'parent' => 0,
+        'child' => 1,
+    ]
 ];

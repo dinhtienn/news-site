@@ -15,9 +15,11 @@ return [
     'lte' => [
         'numeric' => ':attribute phải nhỏ hơn hoặc bằng :value.',
     ],
+    'unique' => ':attribute đã được sử dụng.',
     'attributes' => [
         'phone' => 'Số điện thoại',
         'description' => 'Mô tả',
         'salary' => 'Lương',
+        'name' => 'Tên',
     ],
 ];
