@@ -1,4 +1,8 @@
 {
+    "/admin/js/app.js": "/admin/js/app.js",
+    "/admin/js/category.js": "/admin/js/category.js",
+    "/admin/js/ckeditor.js": "/admin/js/ckeditor.js",
+    "/admin/js/post.js": "/admin/js/post.js",
     "/frontend/js/app.js": "/frontend/js/app.js",
     "/frontend/css/app.css": "/frontend/css/app.css",
     "/frontend/js/detail_category.js": "/frontend/js/detail_category.js",
