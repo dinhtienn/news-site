@@ -131,7 +131,6 @@ class PostController extends AdminController
 
     public function store(PostRequest $request)
     {
-
         $data = [
             'title' => $request->title,
             'slug' => str_slug($request->title),
