@@ -36,11 +36,19 @@ class PostController extends FrontendController
             ->get(['title', 'slug', 'thumbnail']);
         views($post)->cooldown(config('company.count_views_cooldown_time'))->record();
         $viewNumber = views($post)->count();
+        $liked = Auth::check() ? $post->likedUsers->contains(Auth::user()) : false;
+        $comments = $post->comments()->where([
+            'type' => config('company.comment.type.comment'),
+            'status' => config('company.comment.status.display'),
+            'parent_id' => null
+        ])->with('children', 'user')->get();
 
         return view('frontend.posts', compact(
             'post',
             'relatedPosts',
-            'viewNumber'
+            'viewNumber',
+            'liked',
+            'comments'
         ));
     }
 }
