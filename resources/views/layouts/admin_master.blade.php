@@ -18,6 +18,7 @@
           id="app-style"
           rel="stylesheet"
           type="text/css"/>
+    <link href="{{ asset('/frontend/css/app.css') }}" rel="stylesheet">
 </head>
 <body data-sidebar="dark">
     <div id="layout-wrapper">
@@ -33,6 +34,7 @@
 
     <script src="{{ asset('/bower_components/skote-template-assets/assets/libs/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('/bower_components/skote-template-assets/assets/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.js') }}"></script>
     <script src="{{ asset('/bower_components/skote-template-assets/assets/libs/metismenu/metisMenu.min.js') }}"></script>
     <script src="{{ asset('/bower_components/skote-template-assets/assets/libs/simplebar/simplebar.min.js') }}"></script>
     <script src="{{ asset('/bower_components/skote-template-assets/assets/libs/node-waves/waves.min.js') }}"></script>

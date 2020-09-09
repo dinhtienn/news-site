@@ -19,7 +19,7 @@
                 <div class="col-12">
                     <div class="page-title-box d-flex align-items-center justify-content-between">
                         <h4 class="mb-0 font-size-18">
-                            {{ trans('app.rejected_requests') }}
+                            {{ trans('app.rejected_posts') }}
                         </h4>
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
@@ -29,7 +29,7 @@
                                     </a>
                                 </li>
                                 <li class="breadcrumb-item active">
-                                    {{ trans('app.rejected_requests') }}
+                                    {{ trans('app.rejected_posts') }}
                                 </li>
                             </ol>
                         </div>
@@ -41,35 +41,39 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">
-                                {{ trans('app.rejected_requests') }}
-                            </h4>
+                            <div class="row mb-2">
+                                <div class="col-sm-4">
+                                    <h4 class="card-title">
+                                        {{ trans('app.rejected_posts') }}
+                                    </h4>
+                                </div>
+                            </div>
 
                             <table id="datatable" class="table table-bordered dt-responsive nowrap">
                                 <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>{{ trans('app.username') }}</th>
-                                        <th>{{ trans('app.email') }}</th>
-                                        <th>{{ trans('app.phone_number') }}</th>
-                                        <th>{{ trans('app.description') }}</th>
-                                        <th>{{ trans('app.salary') }}</th>
-                                    </tr>
+                                <tr>
+                                    <th>#</th>
+                                    <th>{{ trans('app.title') }}</th>
+                                    <th>{{ trans('app.category') }}</th>
+                                    <th>{{ trans('app.author') }}</th>
+                                    <th>{{ trans('app.created_at') }}</th>
+                                </tr>
                                 </thead>
 
                                 <tbody>
-                                    @php $index = count($rejectedUsers); @endphp
-                                    @foreach ($rejectedUsers as $request)
-                                        <tr>
-                                            <td>{{ $index }}</td>
-                                            <td>{{ $request->user->username }}</td>
-                                            <td>{{ $request->user->email }}</td>
-                                            <td>{{ $request->phone }}</td>
-                                            <td>{{ $request->description }}</td>
-                                            <td>{{ $request->salary }} VNĐ</td>
-                                        </tr>
-                                        @php $index--; @endphp
-                                    @endforeach
+                                @php $index = count($posts); @endphp
+                                @foreach ($posts as $post)
+                                    <tr>
+                                        <td>{{ $index }}</td>
+                                        <td>{{ $post->title }}</td>
+                                        <td>{{ $post->category->name }}</td>
+                                        <td>{{ $post->user->username }}</td>
+                                        <td>
+                                            {{ $post->created_at ? $post->created_at->diffForHumans() : trans('app.no_info') }}
+                                        </td>
+                                    </tr>
+                                    @php $index--; @endphp
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>

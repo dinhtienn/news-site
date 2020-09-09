@@ -99,7 +99,7 @@
                                                 </h4>
                                                 <div class="mas-details">
                                                     <p class="two-lines">
-                                                        {{ $post->content }}
+                                                        {!! $post->content !!}
                                                     </p>
                                                     <a href="{{ route('post.detail', ['slug' => $post->slug]) }}" class="read-more">
                                                         {{ trans('app.read_more') }} &#8702;
@@ -136,7 +136,7 @@
                                                 </h4>
                                                 <div class="mas-details">
                                                     <p class="two-lines">
-                                                        {{ $post->content }}
+                                                        {!! $post->content !!}
                                                     </p>
                                                     <a href="{{ route('post.detail', ['slug' => $post->slug]) }}" class="read-more">
                                                         {{ trans('app.read_more') }} &#8702;
@@ -195,7 +195,7 @@
                                     {{ route('post.detail', ['slug' => $post->slug]) }}
                                 ">
                                     <img src="{{ $post->thumbnail }}"
-                                         class="media-object"
+                                         class="media-object thumbnail-home"
                                          alt="{{ $post->slug }}">
                                 </a>
                             </div>
@@ -233,9 +233,9 @@
                                         </span>
                                     </div>
                                 </div>
-                                <p class="two-lines">
+                                <div class="two-lines content-home">
                                     {!! $post->content !!}
-                                </p>
+                                </div>
                                 <div class="element-block">
                                     <a href="
                                         {{ route('post.detail', ['slug' => $post->slug]) }}
