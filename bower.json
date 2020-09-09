@@ -16,6 +16,8 @@
   ],
   "dependencies": {
     "osru-template-assets": "https://github.com/dinhtienn/osru-template-assets.git",
-    "skote-template-assets": "https://github.com/dinhtienn/skote-template-assets.git"
+    "skote-template-assets": "https://github.com/dinhtienn/skote-template-assets.git",
+    "ckeditor": "https://github.com/ckeditor/ckeditor4-releases.git#^4.15.0",
+    "bootstrap-tagsinput": "https://github.com/bootstrap-tagsinput/bootstrap-tagsinput.git#^0.8.0"
   }
 }

@@ -6,6 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Comment extends Model
 {
+    protected $fillable = [
+        'post_id',
+        'user_id',
+        'content',
+        'type',
+        'status'
+    ];
+
     const STATUS = [
         1 => 'display',
         2 => 'hidden',
