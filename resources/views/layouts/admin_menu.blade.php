@@ -12,16 +12,37 @@
 
                 <li class="menu-title">{{ trans('app.content') }}</li>
                 <li>
-                    <a href="#" class="waves-effect">
+                    <a href="#" class="has-arrow waves-effect">
                         <i class="bx bx-news"></i>
                         <span>{{ trans('app.posts') }}</span>
                     </a>
-                </li>
-                <li>
-                    <a href="#" class="waves-effect">
-                        <i class="bx bx-note"></i>
-                        <span>{{ trans('app.waiting_posts') }}</span>
-                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li>
+                            <a href="{{ route('post.index') }}">
+                                {{ trans('app.public_posts') }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('post.mine') }}">
+                                {{ trans('app.my_posts') }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('post.waiting') }}">
+                                {{ trans('app.waiting_posts') }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('post.rejected') }}">
+                                {{ trans('app.rejected_posts') }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('post.create') }}">
+                                {{ trans('app.create') }}
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                 @if (auth()->user()->role->name === 'admin')
                     <li>

@@ -18,3 +18,5 @@ mix.js('resources/assets/frontend/js/home.js', 'public/frontend/js');
 mix.js('resources/assets/frontend/js/detail_category.js', 'public/frontend/js');
 mix.js('resources/assets/admin/js/app.js', 'public/admin/js');
 mix.js('resources/assets/admin/js/category.js', 'public/admin/js');
+mix.js('resources/assets/admin/js/post.js', 'public/admin/js');
+mix.js('resources/assets/admin/js/ckeditor.js', 'public/admin/js');

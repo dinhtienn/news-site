@@ -45,23 +45,45 @@ Route::group([
 
     Route::get('/dashboard', 'DashboardController')->name('dashboard');
 
-    Route::get('/writer-requests/waiting', 'WriterController@index')->name('writer-requests.index');
+    Route::group(['middleware' => 'check_admin'], function () {
+        Route::get('/writer-requests/waiting', 'WriterController@index')->name('writer-requests.index');
 
-    Route::get('/writer-requests/rejected', 'WriterController@rejected')->name('writer-requests.rejected');
+        Route::get('/writer-requests/rejected', 'WriterController@rejected')->name('writer-requests.rejected');
 
-    Route::get('/writer-requests/accept', 'WriterController@accept')->name('writer-requests.accept');
+        Route::get('/writer-requests/accept', 'WriterController@accept')->name('writer-requests.accept');
 
-    Route::get('/writer-requests/reject', 'WriterController@reject')->name('writer-requests.reject');
+        Route::get('/writer-requests/reject', 'WriterController@reject')->name('writer-requests.reject');
 
-    Route::get('/users/user', 'UserController@user')->name('users.user');
+        Route::get('/users/user', 'UserController@user')->name('users.user');
 
-    Route::get('/users/writer', 'UserController@writer')->name('users.writer');
+        Route::get('/users/writer', 'UserController@writer')->name('users.writer');
 
-    Route::get('/users/admin', 'UserController@admin')->name('users.admin');
+        Route::get('/users/admin', 'UserController@admin')->name('users.admin');
 
-    Route::get('/destroy/category', 'CategoryController@destroy')->name('category.destroy');
+        Route::get('/destroy/category', 'CategoryController@destroy')->name('category.destroy');
 
-    Route::resource('/category', 'CategoryController')->except([
+        Route::resource('/category', 'CategoryController')->except([
+            'show', 'destroy'
+        ]);
+    });
+
+    Route::get('/post-accept', 'PostController@acceptPost')->name('post.accept');
+
+    Route::get('/post-hide', 'PostController@hidePost')->name('post.hide');
+
+    Route::get('/post-reject', 'PostController@rejectPost')->name('post.reject');
+
+    Route::get('/post-review', 'PostController@reviewPost')->name('post.review');
+
+    Route::get('/rejected-post', 'PostController@rejectedPosts')->name('post.rejected');
+
+    Route::get('/waiting-post', 'PostController@waitingPosts')->name('post.waiting');
+
+    Route::get('/my/post', 'PostController@myPosts')->name('post.mine');
+
+    Route::get('/destroy/post', 'PostController@destroy')->name('post.destroy');
+
+    Route::resource('/post', 'PostController')->except([
         'show', 'destroy'
     ]);
 });
@@ -72,6 +94,10 @@ Route::group(['namespace' => 'Api'], function () {
     Route::get('/check-username', 'UserApiController@checkUsername')->name('api.check.username');
 
     Route::get('/check-email', 'UserApiController@checkEmail')->name('api.check.email');
+
+    Route::get('/mark-comment-as-read', 'CommentApiController@markCommentAsRead')->name('api.mask.comment.read');
+
+    Route::get('/insert-comment', 'CommentApiController@insertComment')->name('api.insert.comment');
 });
 
 Route::group(['namespace' => 'Auth'], function () {
