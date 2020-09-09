@@ -4,10 +4,12 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Repositories\Category\CategoryRepositoryInterface as CategoryRepository;
 use App\Repositories\Post\PostRepositoryInterface as PostRepository;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Cache;
-use App\Models\Post;
 use CyrildeWit\EloquentViewable\Support\Period;
+use Illuminate\Support\Facades\Cache;
+use App\Helpers\ContentProcessor;
+use Illuminate\Http\Request;
+use App\Models\Post;
+
 
 class HomeController extends FrontendController
 {
@@ -26,9 +28,9 @@ class HomeController extends FrontendController
                 'latest_posts',
                 config('company.cache_time.latest_posts_homepage'),
                 function () {
-                    return $this
-                        ->postRepository
-                        ->getLatestPost(config('company.limit_posts.latest_posts_homepage'));
+                    return ContentProcessor::detectImageInContent(
+                        $this->postRepository->getLatestPost(config('company.limit_posts.latest_posts_homepage'))
+                    );
                 }
             );
             $dataPagination = Cache::remember(
@@ -39,9 +41,11 @@ class HomeController extends FrontendController
                 }
             );
         } else {
-            $latestPosts = $this->postRepository->getPaginationPosts(
-                ($page - 1) * config('company.limit_posts.latest_posts_homepage'),
-                config('company.limit_posts.latest_posts_homepage')
+            $latestPosts = ContentProcessor::detectImageInContent(
+                $this->postRepository->getPaginationPosts(
+                    ($page - 1) * config('company.limit_posts.latest_posts_homepage'),
+                    config('company.limit_posts.latest_posts_homepage')
+                )
             );
             $dataPagination = $this->paginationLatestPosts($page);
         }
@@ -50,11 +54,13 @@ class HomeController extends FrontendController
             'hot_posts',
             config('company.cache_time.hot_posts'),
             function () {
-                return Post::orderBy('created_at', 'desc')
+                return ContentProcessor::detectImageInContent(
+                    Post::orderBy('created_at', 'desc')
                     ->with('category')
                     ->orderByViews('desc', Period::pastDays(config('company.hot_posts_views_per')))
                     ->take(config('company.limit_posts.hot_posts'))
-                    ->get();
+                    ->get()
+                );
             }
         );
         $popularPosts = Cache::remember(

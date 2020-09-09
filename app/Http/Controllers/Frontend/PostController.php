@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use Illuminate\Http\Request;
 use App\Repositories\Category\CategoryRepositoryInterface as CategoryRepository;
 use App\Repositories\Post\PostRepositoryInterface as PostRepository;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends FrontendController
 {
@@ -17,7 +18,14 @@ class PostController extends FrontendController
 
     public function show(Request $request)
     {
-        $post = $this->postRepository->getByColumn($request->slug, 'slug');
+        if (Auth::check() && Auth::user()->role->name !== 'user') {
+            $post = $this->postRepository->getByColumnWithoutScope($request->slug, 'slug');
+            if ($post->status === config('company.post_status.rejected')) {
+                abort(404);
+            }
+        } else {
+            $post = $this->postRepository->getByColumn($request->slug, 'slug');
+        }
         $post->load('tags');
         $relatedPosts = $post
             ->category

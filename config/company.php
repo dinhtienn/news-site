@@ -45,6 +45,7 @@ return [
     'popular_posts_views_per' => 3,
     'feedback_route' => 'https://forms.gle/HkjAvRBw6q9rjJ8p9',
     'feedback_result' => 'https://docs.google.com/spreadsheets/d/1RpCVLQyhJEWfl8dur9YXV_lVdWI7heFgkIjm2DMfy8U/edit?usp=sharing',
+    'default_post_img' => 'https://lorempixel.com/640/480/?80408',
     'request_writer' => [
         'accepted' => 1,
         'rejected' => 0,
@@ -52,5 +53,29 @@ return [
     'category' => [
         'parent' => 0,
         'child' => 1,
-    ]
+    ],
+    'post_status' => [
+        'waiting' => 0,
+        'rejected' => 1,
+        'commented' => 2,
+        'accepted' => 3,
+    ],
+    'comment' => [
+        'type' => [
+            'comment' => 1,
+            'review' => 2,
+        ],
+        'status' => [
+            'display' => 1,
+            'hidden' => 2,
+            'waiting' => 3,
+            'processed' => 4,
+        ]
+    ],
+    'status_post' => [
+        0 => 'waiting',
+        1 => 'rejected',
+        2 => 'commented',
+        3 => 'accepted',
+    ],
 ];

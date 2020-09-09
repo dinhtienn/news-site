@@ -11,4 +11,13 @@ class CommentRepository extends BaseRepository implements CommentRepositoryInter
     {
         return Comment::class;
     }
+
+    public function getCurrentReview($postId)
+    {
+        return $this->model->where([
+            'post_id' => $postId,
+            'type' => config('company.comment.type.review'),
+            'status' => config('company.comment.status.waiting')
+        ])->first();
+    }
 }
