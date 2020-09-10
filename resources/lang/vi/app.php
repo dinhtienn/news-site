@@ -118,4 +118,10 @@ return [
     'rejected' => 'Đã bị huỷ',
     'accepted' => 'Đã được duyệt',
     'commented' => 'Đã được nhận xét',
+    'login_to_like' => 'Bạn cần đăng nhập để thích',
+    'login_to_comment' => 'Bạn cần đăng nhập để bình luận',
+    'post_comment' => 'Đăng bình luận',
+    'cancel_reply' => 'Huỷ trả lời',
+    'edit_your_comment' => 'Sửa bình luận của bạn',
+    'cancel_edit' => 'Huỷ sửa',
 ];

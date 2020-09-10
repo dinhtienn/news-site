@@ -34,6 +34,12 @@ Route::group(['namespace' => 'Frontend'], function () {
     Route::resource('writer-requests', 'WriterController')->only([
         'create', 'store'
     ]);
+
+    Route::get('/comment', 'CommentController@comment')->name('comment');
+
+    Route::get('/hide-comment', 'CommentController@hide')->name('comment.hide');
+
+    Route::get('/delete-comment', 'CommentController@delete')->name('comment.delete');
 });
 
 Route::group([
@@ -98,6 +104,8 @@ Route::group(['namespace' => 'Api'], function () {
     Route::get('/mark-comment-as-read', 'CommentApiController@markCommentAsRead')->name('api.mask.comment.read');
 
     Route::get('/insert-comment', 'CommentApiController@insertComment')->name('api.insert.comment');
+
+    Route::get('/like', 'LikeApiController@processLike')->name('api.like');
 });
 
 Route::group(['namespace' => 'Auth'], function () {

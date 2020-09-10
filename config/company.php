@@ -46,6 +46,7 @@ return [
     'feedback_route' => 'https://forms.gle/HkjAvRBw6q9rjJ8p9',
     'feedback_result' => 'https://docs.google.com/spreadsheets/d/1RpCVLQyhJEWfl8dur9YXV_lVdWI7heFgkIjm2DMfy8U/edit?usp=sharing',
     'default_post_img' => 'https://lorempixel.com/640/480/?80408',
+    'default_user_avatar' => '/bower_components/skote-template-assets/assets/images/users/avatar-2.jpg',
     'request_writer' => [
         'accepted' => 1,
         'rejected' => 0,
