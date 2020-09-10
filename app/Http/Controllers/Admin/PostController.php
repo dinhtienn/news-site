@@ -107,6 +107,9 @@ class PostController extends AdminController
         foreach ($post->tags as $tag) {
             $tags .= ",$tag->name";
         }
+        if (strlen($tags) > 0) {
+            $tags = substr($tags, 1);
+        }
         $review = true;
         $reviewContent = $post->comments()->where([
             'type' => config('company.comment.type.review'),
