@@ -11,7 +11,8 @@ class Comment extends Model
         'user_id',
         'content',
         'type',
-        'status'
+        'status',
+        'parent_id'
     ];
 
     const STATUS = [
