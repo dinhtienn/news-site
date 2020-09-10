@@ -47,8 +47,6 @@ Route::group([
     'prefix' => '/admin',
     'middleware' => 'check_if_admin'
 ], function () {
-    Route::get('/', 'DashboardController')->name('dashboard');
-
     Route::get('/dashboard', 'DashboardController')->name('dashboard');
 
     Route::group(['middleware' => 'check_admin'], function () {
