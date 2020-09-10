@@ -84,4 +84,5 @@ $('#btn-cancel-edit').click(function (e) {
     $('#btn-cancel-edit').removeClass('d-block');
     $('#btn-cancel-edit').addClass('d-none');
     $('#input-parent').val(null);
+    $('#textarea').text('');
 });
