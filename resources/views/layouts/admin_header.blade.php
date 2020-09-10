@@ -70,7 +70,7 @@
                         aria-haspopup="true"
                         aria-expanded="false">
                     <img class="rounded-circle header-profile-user"
-                         src="{{ asset('/bower_components/skote-template-assets/assets/images/users/avatar-2.jpg') }}"
+                         src="{{ asset(config('company.default_user_avatar')) }}"
                          alt="Header Avatar">
                     <span class="d-none d-xl-inline-block ml-1">
                         {{ auth()->check() ? auth()->user()->username : '' }}

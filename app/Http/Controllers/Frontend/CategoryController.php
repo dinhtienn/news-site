@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Helpers\CommentProcessor;
 use Illuminate\Http\Request;
 use App\Repositories\Category\CategoryRepositoryInterface as CategoryRepository;
 use App\Repositories\Post\PostRepositoryInterface as PostRepository;
@@ -51,6 +52,7 @@ class CategoryController extends FrontendController
                 ->take(config('company.limit_posts.category_detail'));
         }]);
         $posts = $category->posts;
+        $posts = CommentProcessor::countComments($posts);
         $dataPagination = $this->paginationCategoryPosts($page, $category);
 
         return view('frontend.detail_category', compact(

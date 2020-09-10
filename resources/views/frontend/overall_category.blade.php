@@ -42,11 +42,6 @@
                                                     <i class="fa fa-calendar-o" aria-hidden="true"></i>
                                                     <time>{{ $category->posts[0]->created_at->diffForHumans() }}</time>
                                                 </span>
-                                                <span class="comment-link">
-                                                    <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i>
-                                                        9 {{ trans('app.comments') }}
-                                                    </a>
-                                                </span>
                                                 <span>
                                                     <i class="fa fa-eye" aria-hidden="true"></i>
                                                     {{ views($category->posts[0])->count() }}
@@ -79,12 +74,6 @@
                                             </a>
                                         </h6>
                                         <div class="entry-meta">
-                                            <span class="comment-link">
-                                                <a href="#">
-                                                    <i class="fa fa-comment-o" aria-hidden="true"></i>
-                                                    9 {{ trans('app.comments') }}
-                                                </a>
-                                            </span>
                                             <span>
                                                 <i class="fa fa-eye" aria-hidden="true"></i>
                                                 {{ views($post)->count() }}

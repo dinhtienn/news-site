@@ -28,7 +28,7 @@
                                             <span class="comment-link">
                                                 <a href="#">
                                                     <i class="fa fa-comment-o" aria-hidden="true"></i>
-                                                    9 {{ trans('app.comments') }}
+                                                    {{ $post->commentCount }} {{ trans('app.comments') }}
                                                 </a>
                                             </span>
                                             <span>

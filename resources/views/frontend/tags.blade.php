@@ -1,17 +1,6 @@
 @extends('layouts.frontend_master')
 
 @section('main-content')
-    <div class="parallax page_header" data-parallax-bg-image="{{ asset('bower_components/osru-template-assets/assets/images/header-bg.jpg') }}"
-         data-parallax-direction="left">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <h3>{{ $tag->name }}</h3>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div class="page-content">
         <div class="container">
             <div class="row">
@@ -39,7 +28,7 @@
                                             <span class="comment-link">
                                                 <a href="#">
                                                     <i class="fa fa-comment-o" aria-hidden="true"></i>
-                                                    9 {{ trans('app.comments') }}
+                                                    {{ $post->commentCount }} {{ trans('app.comments') }}
                                                 </a>
                                             </span>
                                         </div>

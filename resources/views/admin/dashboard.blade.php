@@ -51,7 +51,7 @@
                             <div class="row">
                                 <div class="col-sm-4">
                                     <div class="avatar-md profile-user-wid mb-4">
-                                        <img src="{{ asset('/bower_components/skote-template-assets/assets/images/users/avatar-2.jpg') }}"
+                                        <img src="{{ asset(config('company.default_user_avatar')) }}"
                                              alt="avatar"
                                              class="img-thumbnail rounded-circle">
                                     </div>
