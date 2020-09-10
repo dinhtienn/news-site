@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .two-lines {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -60,4 +64,20 @@ textarea {
 
 .empty-div-200 {
   height: 200px;
+}
+
+.btn-like {
+  border: none !important;
+  margin-top: 20px !important;
+  outline: none !important;
+
+  i {
+    color: red;
+    font-size: 40px;
+  }
+}
+
+#btn-cancel-reply, #btn-cancel-edit {
+  margin-top: 0 !important;
+  margin-bottom: 10px !important;
 }

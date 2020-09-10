@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Helpers\CommentProcessor;
 use App\Repositories\Category\CategoryRepositoryInterface as CategoryRepository;
 use App\Repositories\Post\PostRepositoryInterface as PostRepository;
 use CyrildeWit\EloquentViewable\Support\Period;
@@ -28,9 +29,10 @@ class HomeController extends FrontendController
                 'latest_posts',
                 config('company.cache_time.latest_posts_homepage'),
                 function () {
-                    return ContentProcessor::detectImageInContent(
+                    $posts = ContentProcessor::detectImageInContent(
                         $this->postRepository->getLatestPost(config('company.limit_posts.latest_posts_homepage'))
                     );
+                    return CommentProcessor::countComments($posts);
                 }
             );
             $dataPagination = Cache::remember(
@@ -47,6 +49,7 @@ class HomeController extends FrontendController
                     config('company.limit_posts.latest_posts_homepage')
                 )
             );
+            $latestPosts = CommentProcessor::countComments($latestPosts);
             $dataPagination = $this->paginationLatestPosts($page);
         }
 
@@ -54,24 +57,26 @@ class HomeController extends FrontendController
             'hot_posts',
             config('company.cache_time.hot_posts'),
             function () {
-                return ContentProcessor::detectImageInContent(
+                $posts = ContentProcessor::detectImageInContent(
                     Post::orderBy('created_at', 'desc')
                     ->with('category')
                     ->orderByViews('desc', Period::pastDays(config('company.hot_posts_views_per')))
                     ->take(config('company.limit_posts.hot_posts'))
                     ->get()
                 );
+                return CommentProcessor::countComments($posts);
             }
         );
         $popularPosts = Cache::remember(
             'popular_posts',
             config('company.cache_time.popular_posts_homepage'),
             function () {
-                return Post::orderBy('created_at', 'desc')
+                $posts = Post::orderBy('created_at', 'desc')
                     ->with('category')
                     ->orderByViews('desc', Period::pastDays(config('company.popular_posts_views_per')))
                     ->take(config('company.limit_posts.popular_posts_homepage'))
                     ->get();
+                return CommentProcessor::countComments($posts);
             }
         );
 
