@@ -25,6 +25,9 @@ class PostController extends FrontendController
             }
         } else {
             $post = $this->postRepository->getByColumn($request->slug, 'slug');
+            if (!$post) {
+                abort(403);
+            }
         }
         $post->load('tags');
         $relatedPosts = $post

@@ -28,6 +28,7 @@ class WriterRequest extends FormRequest
             'phone' => 'bail|required|numeric',
             'description' => 'bail|required|min:50',
             'salary'  =>  'bail|required|gte:15000|lte:35000',
+            'cv_path' => 'bail|required|mimes:pdf'
         ];
     }
 }

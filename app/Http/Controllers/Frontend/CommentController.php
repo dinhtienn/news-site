@@ -70,6 +70,7 @@ class CommentController extends FrontendController
         if (Auth::id() !== $comment->user_id) {
             abort(403);
         }
+        $comment->children()->delete();
         $this->commentRepository->deleteById($request->get('id'));
 
         return redirect()->to(url()->previous());

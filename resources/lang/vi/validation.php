@@ -26,5 +26,6 @@ return [
         'content' => 'Nội dung',
         'category_id' => 'Danh mục',
         'thumbnail' => 'Hình đại diện',
+        'cv_path' => 'Hồ sơ',
     ],
 ];

@@ -83,7 +83,7 @@ class PostController extends AdminController
             ]
         );
 
-        return redirect()->route('post.index');
+        return redirect()->to(url()->previous());
     }
 
     public function rejectPost(Request $request)
@@ -154,7 +154,7 @@ class PostController extends AdminController
         $post = $this->postRepository->create($data);
         $this->addTags($post->id, $request->tags);
 
-        return redirect()->route('post.index');
+        return redirect()->route('post.waiting');
     }
 
     public function edit(Request $request)
@@ -187,7 +187,7 @@ class PostController extends AdminController
         ));
         $this->addTags($post->id, $request->tags);
 
-        return redirect()->route('post.index');
+        return redirect()->to(url()->previous());
     }
 
     public function destroy(Request $request)
@@ -205,7 +205,7 @@ class PostController extends AdminController
             $post->delete();
         });
 
-        return redirect()->route('post.index');
+        return redirect()->to(url()->previous());
     }
 
     public function addTags($postId, $tags)
@@ -225,7 +225,7 @@ class PostController extends AdminController
             }
         }
 
-        $post = $this->postRepository->getById($postId);
+        $post = $this->postRepository->getByIdWithoutScope($postId);
         $post->tags()->sync($tagsId);
     }
 }

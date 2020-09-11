@@ -155,6 +155,7 @@ return [
         'content' => 'Content',
         'category_id' => 'Category',
         'thumbnail' => 'Thumbnail',
+        'cv_path'  => 'CV',
     ],
 
 ];

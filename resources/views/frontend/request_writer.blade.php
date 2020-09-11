@@ -2,9 +2,8 @@
 
 @section('main-content')
     <div class="parallax page_header"
-         data-parallax-bg-image="{{ asset('bower_components/osru-template-assets/assets/images/header-bg.jpg') }}"
-         data-parallax-direction="left"
-    >
+        data-parallax-bg-image="{{ asset('bower_components/osru-template-assets/assets/images/header-bg.jpg') }}"
+        data-parallax-direction="left">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
@@ -29,8 +28,8 @@
                     <div class="contact-info">
                         <div class="contact-form">
                             <form action="{{ route('writer-requests.store') }}"
-                                  enctype="multipart/form-data"
-                                  method="POST">
+                                enctype="multipart/form-data"
+                                method="POST">
                                 <h3>{{ trans('app.request_writer') }}</h3>
                                 @csrf
                                 <div class="form-group row">
@@ -39,11 +38,11 @@
                                     </label>
                                     <div class="col-sm-9">
                                         <input class="form-control"
-                                               id="phone"
-                                               type="number"
-                                               name="phone"
-                                               value="{{ old('phone') }}"
-                                               required>
+                                            id="phone"
+                                            type="number"
+                                            name="phone"
+                                            value="{{ old('phone') }}"
+                                            required>
                                         @error('phone')
                                             <p class="text-danger">
                                                 {{ $message }}
@@ -57,11 +56,9 @@
                                     </label>
                                     <div class="col-sm-9">
                                         <textarea class="form-control"
-                                                  id="description"
-                                                  rows="10"
-                                                  name="description">
-                                            {{ old('description') }}
-                                        </textarea>
+                                                id="description"
+                                                rows="10"
+                                                name="description">{{ old('description') }}</textarea>
                                         @error('description')
                                             <p class="text-danger">
                                                 {{ $message }}
@@ -75,10 +72,10 @@
                                     </label>
                                     <div class="col-sm-9">
                                         <input class="form-control"
-                                               id="cv"
-                                               name="cv_path"
-                                               value="{{ old('cv_path') }}"
-                                               type="file">
+                                            id="cv"
+                                            name="cv_path"
+                                            value="{{ old('cv_path') }}"
+                                            type="file">
                                         @error('cv_path')
                                             <p class="text-danger">
                                                 {{ $message }}
@@ -92,11 +89,11 @@
                                     </label>
                                     <div class="col-sm-9">
                                         <input class="form-control"
-                                               id="salary"
-                                               type="number"
-                                               name="salary"
-                                               value="{{ old('salary') }}"
-                                               required>
+                                            id="salary"
+                                            type="number"
+                                            name="salary"
+                                            value="{{ old('salary') }}"
+                                            required>
                                         @error('salary')
                                             <p class="text-danger">
                                                 {{ $message }}
