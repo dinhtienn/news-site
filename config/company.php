@@ -79,4 +79,5 @@ return [
         2 => 'commented',
         3 => 'accepted',
     ],
+    'category_id' => [1, 2, 3, 4, 5],
 ];

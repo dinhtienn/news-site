@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Repositories\Category\CategoryRepositoryInterface as CategoryRepository;
 use App\Http\Requests\CategoryRequest;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class CategoryController extends AdminController
 {
@@ -53,24 +53,29 @@ class CategoryController extends AdminController
 
     public function update(CategoryRequest $request)
     {
-        $data = [
-            'name' => $request->name,
-            'parent_id' => $request->parent_id
-        ];
-        if ($request->parent_id === 'null') {
-            $data['parent_id'] = null;
-        }
-        $this->categoryRepository->updateById($request->category, array_merge(
-            $data,
-            ['slug' => str_slug($request->name)]
-        ));
+        try {
+            $data = [
+                'name' => $request->name,
+                'parent_id' => $request->parent_id
+            ];
+            if ($request->parent_id === 'null') {
+                $data['parent_id'] = null;
+            }
+            $this->categoryRepository->updateById($request->category, array_merge(
+                $data,
+                ['slug' => str_slug($request->name)]
+            ));
 
-        return redirect()->route('category.index');
+            return redirect()->route('category.index');
+        } catch (ModelNotFoundException $exception) {
+            return redirect()->route('category.index')
+                ->with('error', trans('app.error'));
+        }
     }
 
     public function destroy(Request $request)
     {
-        DB::transaction(function () use ($request) {
+        try {
             $id = $request->get('id');
             $category = $this->categoryRepository->getById($id);
             $category->posts()->delete();
@@ -81,8 +86,11 @@ class CategoryController extends AdminController
                 }
             }
             $category->delete();
-        });
 
-        return redirect()->route('category.index');
+            return redirect()->route('category.index');
+        } catch (ModelNotFoundException $exception) {
+            return redirect()->route('category.index')
+                ->with('error', trans('app.error'));
+        }
     }
 }

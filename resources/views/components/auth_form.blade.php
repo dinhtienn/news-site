@@ -18,15 +18,15 @@
                     <div class="tab-content">
                         <div class="tab-pane fade in active" id="login">
                             <form id="login-form"
-                                  action="{{ route('login') }}"
-                                  method="POST">
+                                action="{{ route('login') }}"
+                                method="POST">
                                 @csrf
                                 <div class="form-content text-center">
                                     <h2>{{ trans('auth.login') }}</h2>
                                     <p>{{ trans('app.choose_one_following_method') }}.</p>
                                     <div class="social-btn">
                                         <a href="{{ route('auth.social.login', ['provider' => 'facebook']) }}"
-                                           class="btn btn-fb">
+                                            class="btn btn-fb">
                                             <i class="fa fa-facebook"></i>
                                             {{ trans('app.with') }} Facebook
                                         </a>
@@ -37,24 +37,22 @@
                                     <p>{{ trans('auth.login_by_email') }}</p>
                                     <div class="form-group">
                                         <input class="form-control"
-                                               name="email"
-                                               id="login-email"
-                                               placeholder="{{ trans('app.email') }}"
-                                               type="email"
-                                               value="{{ old('email') }}"
-                                               autocomplete="email"
-                                               required
-                                        >
+                                            name="email"
+                                            id="login-email"
+                                            placeholder="{{ trans('app.email') }}"
+                                            type="email"
+                                            value="{{ old('email') }}"
+                                            autocomplete="email"
+                                            required>
                                     </div>
                                     <div class="form-group">
                                         <input class="form-control"
-                                               name="password"
-                                               id="login-password"
-                                               placeholder="{{ trans('app.password') }}"
-                                               type="password"
-                                               autocomplete="current-password"
-                                               required
-                                        >
+                                            name="password"
+                                            id="login-password"
+                                            placeholder="{{ trans('app.password') }}"
+                                            type="password"
+                                            autocomplete="current-password"
+                                            required>
                                     </div>
                                     <p id="login-error"
                                        class="text-red-theme">
@@ -65,10 +63,9 @@
                                     <div class="block-content">
                                         <div class="checkbox checkbox-danger">
                                             <input id="checkbox8"
-                                                    type="checkbox"
-                                                    name="remember"
-                                                    {{ old('remember') ? 'checked' : '' }}
-                                            >
+                                                type="checkbox"
+                                                name="remember"
+                                                {{ old('remember') ? 'checked' : '' }}>
                                             <label for="checkbox8">
                                                 {{ trans('auth.remember_me') }}
                                             </label>
@@ -76,8 +73,8 @@
                                         <a href="#" class="forgot">{{ trans('auth.forgot_password') }}?</a>
                                     </div>
                                     <button type="submit"
-                                            class="btn link-btn btn-block btn-rounded"
-                                    >
+                                        id="btn-submit-login"
+                                        class="btn link-btn btn-block btn-rounded">
                                         {{ trans('auth.login') }} &#8702;
                                     </button>
                                     <div>
@@ -90,9 +87,8 @@
 
                         <div class="tab-pane fade" id="register">
                             <form id="register-form"
-                                  action="{{ route('register') }}"
-                                  method="POST"
-                            >
+                                action="{{ route('register') }}"
+                                method="POST">
                                 @csrf
                                 <div class="form-content">
                                     <h2 class="text-center">
@@ -100,40 +96,36 @@
                                     </h2>
                                     <div class="form-group">
                                         <input class="form-control"
-                                               name="username"
-                                               id="register-username"
-                                               placeholder="{{ trans('app.username') }}"
-                                               type="text"
-                                               value="{{ old('username') }}"
-                                               required
-                                        >
+                                            name="username"
+                                            id="register-username"
+                                            placeholder="{{ trans('app.username') }}"
+                                            type="text"
+                                            value="{{ old('username') }}"
+                                            required>
                                     </div>
                                     <div class="form-group">
                                         <input class="form-control"
-                                               name="email"
-                                               id="register-email"
-                                               placeholder="{{ trans('app.email') }}"
-                                               type="email"
-                                               value="{{ old('email') }}"
-                                               required
-                                        >
+                                            name="email"
+                                            id="register-email"
+                                            placeholder="{{ trans('app.email') }}"
+                                            type="email"
+                                            value="{{ old('email') }}"
+                                            required>
                                     </div>
                                     <div class="form-group">
                                         <input class="form-control"
-                                               name="password"
-                                               id="register-password"
-                                               placeholder="{{ trans('app.password') }}"
-                                               type="password"
-                                               required
-                                        >
+                                            name="password"
+                                            id="register-password"
+                                            placeholder="{{ trans('app.password') }}"
+                                            type="password"
+                                            required>
                                     </div>
                                     <div class="form-group">
                                         <input class="form-control"
-                                               id="confirm-password"
-                                               placeholder="{{ trans('app.confirm_password') }}"
-                                               type="password"
-                                               required
-                                        >
+                                            id="confirm-password"
+                                            placeholder="{{ trans('app.confirm_password') }}"
+                                            type="password"
+                                            required>
                                     </div>
                                     <p id="register-error"
                                        class="text-red-theme">
@@ -148,8 +140,7 @@
                                         </div>
                                     </div>
                                     <button type="submit"
-                                            class="btn link-btn btn-block btn-rounded"
-                                    >
+                                        class="btn link-btn btn-block btn-rounded">
                                         {{ trans('auth.register') }} &#8702;
                                     </button>
                                 </div>
